@@ -4,7 +4,7 @@ An internal, fully sourced compliance dashboard tracking implementation of the *
 
 Each of the 14 articles is scored against a fixed status taxonomy and backed by a dated, tier-tagged evidence log. The dashboard is a single self-contained HTML file — no build step, no server, no dependencies.
 
-> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **3 Aug 2026** refresh (Day 47 of 60): Breached 6 · At Risk / Contested 6 · Conditional 2. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
+> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **4 Aug 2026** refresh (Day 48 of 60): Breached 6 · At Risk / Contested 6 · Conditional 2. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
 
 ---
 
