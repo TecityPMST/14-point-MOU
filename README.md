@@ -22,6 +22,7 @@ Each of the 14 articles is scored against a fixed status taxonomy and backed by 
 | `14-point Islamabad Memorandum of Understanding … 17 Jun 2026.pdf` | Authoritative verbatim MOU text. The reference the compliance tests are drawn from. |
 | `Chatham House — …` | Third-party analysis-tier reference material. |
 | `_to_delete/` | Superseded root PDFs staged for deletion. Safe to empty. |
+| `.github_token` | **Local only, never committed.** Fine-grained GitHub PAT used by the refresh to push. See *Publishing* below. |
 
 ### Naming and archive conventions
 
@@ -57,7 +58,8 @@ A run does the following:
 5. **Update the data block.** Refresh statuses, the six status counts (must sum to 14), the executive digest and the clock values. The prior run's counts and date are captured into `PREV_COUNTS` / `PREV_LABEL` so each tile can show its change line.
 6. **Rebuild and verify** the HTML, then write the canonical file, `index.html` and the archive snapshot.
 7. **Generate the PDF** and write it to root and `Archive/`.
-8. **Report** a change-log: status moves with rationale, notable new evidence, new UNVERIFIED flags, current counts, and Day *N*/60.
+8. **Commit and push** to GitHub, after the integrity checks pass.
+9. **Report** a change-log: status moves with rationale, notable new evidence, new UNVERIFIED flags, current counts, Day *N*/60, and the published commit SHA.
 
 ### Integrity checks — every build must pass
 
@@ -78,20 +80,38 @@ The dashboard renders its content at runtime, so the PDF is produced by **pre-re
 
 Two things to keep in mind: weasyprint doesn't support the dashboard's `auto-fit` grid, so the print CSS pins the tiles to `repeat(6, 1fr)`; and articles whose evidence logs run to 70-plus rows exceed a page, so `break-inside: avoid` is applied only to short cards — otherwise long ones get pushed whole and leave near-empty pages.
 
-### Committing a refresh
+### Publishing
 
-Each refresh touches: the canonical HTML, `index.html`, the day's archive HTML, and two PDFs (root + archive). A reasonable commit convention:
+The refresh commits and pushes automatically as Step 8, to `TecityPMST/14-point-MOU` on `main`.
+
+A run touches five files locally — the canonical HTML, `index.html`, the day's archive HTML and two PDFs — but **only the two HTML files and the README go to GitHub**. `.gitignore` ignores the folder root by default (`/*`) and re-admits four paths by name, so PDFs, `Archive/`, `_to_delete/`, the source PDFs and the token can never enter a commit by accident. The repo stays under 1.5 MB per revision; the OneDrive folder remains the full archive.
+
+Commit convention:
 
 ```
-refresh: 2026-07-30 — Day 43/60, no status changes (B6/R6/C2)
+refresh: 2026-08-14 — Day 58/60, no status changes (B7/R6/C1)
 ```
 
-Note the repo grows by roughly 0.2–2.2 MB per run from the archived PDFs. If that becomes unwieldy, either move the PDF archive to Git LFS or stop committing archive PDFs and keep them in the OneDrive folder only:
+**A push is only believed once verified.** `git push` reporting `Everything up-to-date` can mean the commit was already on the remote, not that this run put it there — so the run confirms `git ls-remote … main` matches local `HEAD` before reporting success.
 
-```gitignore
-# Optional: keep the HTML audit trail in git, leave archived PDFs out
-Archive/*.pdf
-_to_delete/
+### The token
+
+Publishing reads a fine-grained GitHub PAT from `.github_token` at the folder root. It needs exactly two things:
+
+- **Repository access:** Only select repositories → `14-point-MOU`
+- **Permissions → Repository permissions → Contents:** Read and write
+
+Everything else can stay at no access. `Metadata: Read-only` enables itself automatically.
+
+**Rotation.** Fine-grained tokens expire. When one does, pushes fail with 401 and the run will say so, complete everything else, and leave the commit ready to push by hand. To replace it: generate a new token at *github.com/settings/personal-access-tokens*, overwrite `.github_token` with the new string, and delete the old token on GitHub.
+
+**Handle it as a live credential.** The file is gitignored, but this folder is OneDrive-synced, so the token replicates to the cloud and to every device signed into the account. Keeping it scoped to this one repo with a short expiry is what keeps that exposure bounded. If the folder is ever shared, moved to a shared drive, or the repo made public to a wider audience, rotate the token first.
+
+Manual push, if ever needed:
+
+```
+cd "C:\Users\TeoQingWei\OneDrive - Straits Developments Pte Ltd\Tecity 14-point MOU Compliance Tracker"
+git push origin main
 ```
 
 ---
