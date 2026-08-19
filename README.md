@@ -4,7 +4,7 @@ An internal, fully sourced compliance dashboard tracking implementation of the *
 
 Each of the 14 articles is scored against a fixed status taxonomy and backed by a dated, tier-tagged evidence log. The dashboard is a single self-contained HTML file — no build step, no server, no dependencies.
 
-> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **18 Aug 2026** refresh (Day 62 of 60 — the window expired on 16 Aug without a final deal or an agreed extension): Breached 10 · At Risk / Contested 4 · Conditional 0. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
+> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **19 Aug 2026** refresh (Day 63 of 60 — the window expired on 16 Aug without a final deal or an agreed extension, and the US called off talks on 18 Aug): Breached 10 · At Risk / Contested 4 · Conditional 0. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
 
 ---
 
