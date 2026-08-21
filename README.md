@@ -4,7 +4,7 @@ An internal, fully sourced compliance dashboard tracking implementation of the *
 
 Each of the 14 articles is scored against a fixed status taxonomy and backed by a dated, tier-tagged evidence log. The dashboard is a single self-contained HTML file — no build step, no server, no dependencies.
 
-> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **20 Aug 2026** refresh (Day 64 of 60 — the window expired on 16 Aug without a final deal or an agreed extension, and on 19 Aug the US announced an "economic D-Day" campaign in place of negotiations): Breached 10 · At Risk / Contested 4 · Conditional 0. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
+> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **21 Aug 2026** refresh (Day 65 of 60 — the window expired on 16 Aug without a final deal or an agreed extension; on 20 Aug the US Treasury Secretary said the sanctions campaign is intended to "collapse this regime", and General License X's nominal expiry falls today with no oil licence in force since its 7 Jul revocation): Breached 10 · At Risk / Contested 4 · Conditional 0. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
 
 ---
 
