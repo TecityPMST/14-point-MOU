@@ -4,7 +4,7 @@ An internal, fully sourced compliance dashboard tracking implementation of the *
 
 Each of the 14 articles is scored against a fixed status taxonomy and backed by a dated, tier-tagged evidence log. The dashboard is a single self-contained HTML file — no build step, no server, no dependencies.
 
-> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **25 Aug 2026** refresh (Day 69 of 60 — the window expired on 16 Aug without a final deal or an agreed extension; on 24 Aug the US Treasury launched "Operation Economic Outcast", issuing five sectoral sanctions determinations under E.O. 13902, designating roughly 60 entities, individuals and vessels, and suspending Iran General Licenses F and G): Breached 10 · At Risk / Contested 4 · Conditional 0. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
+> **Snapshot, not a feed.** The dashboard does not update itself. Every figure in it is true as of the "Last refreshed" date in its header and no later. As of the **26 Aug 2026** refresh (Day 70 of 60 — the window expired on 16 Aug without a final deal or an agreed extension; Pakistan reported "significant progress" toward restoring the memorandum after the Munir–Naqvi mission to Tehran, while Treasury signalled a further designation of a major financial institution within the week and CENTCOM published no blockade update for the first time since the count began): Breached 10 · At Risk / Contested 4 · Conditional 0. Open the dashboard for the current state rather than trusting this line, which is updated by hand.
 
 ---
 
