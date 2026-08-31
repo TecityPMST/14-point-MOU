@@ -110,7 +110,7 @@ Everything else can stay at no access. `Metadata: Read-only` enables itself auto
 Manual push, if ever needed:
 
 ```
-cd "C:\Users\TeoQingWei\OneDrive - Straits Developments Pte Ltd\Tecity 14-point MOU Compliance Tracker"
+cd "C:\Users\TeoQingWei\OneDrive - Straits Developments Pte Ltd\Bloomberg [BB]'s files - PMST Research Dashboard\Tecity 14-point MOU Compliance Tracker"
 git push origin main
 ```
 
