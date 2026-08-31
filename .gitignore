@@ -1,7 +1,7 @@
 # Publish only the tracker itself. Everything else in this folder stays local.
 #
-# The folder is ~124 MB (61 MB Archive, 46 MB _to_delete, a nested git repo in
-# tecity-cowork-site, and multi-MB timestamped PDFs). Only three files belong in
+# The folder is ~211 MB (189 MB of it Archive, plus multi-MB timestamped PDFs
+# and the source reference PDFs). Only three files belong in
 # the GitHub repo, so this ignores everything by default and re-admits them by
 # name. New PDFs, archive snapshots and working files can never sneak into a
 # commit by accident.

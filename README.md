@@ -18,10 +18,8 @@ Each of the 14 articles is scored against a fixed status taxonomy and backed by 
 | `Archive/MOU_Tracker_YYYY-MM-DD.html` | One immutable HTML snapshot per refresh day. |
 | `Archive/MOU_Tracker_YYYY-MM-DD_HHMMSGT.pdf` | One immutable PDF snapshot per run. Every copy is kept — this is the audit trail. |
 | `_INSTRUCTIONS.md` | The operating spec the refresh runs against: trigger phrase, sourcing rules, article obligations, design tokens, workflow, quality checklist. |
-| `mou_compliance_tracker.jsx` | Original React build. Superseded by the portable HTML; retained for reference only. |
 | `14-point Islamabad Memorandum of Understanding … 17 Jun 2026.pdf` | Authoritative verbatim MOU text. The reference the compliance tests are drawn from. |
 | `Chatham House — …` | Third-party analysis-tier reference material. |
-| `_to_delete/` | Superseded root PDFs staged for deletion. Safe to empty. |
 | `.github_token` | **Local only, never committed.** Fine-grained GitHub PAT used by the refresh to push. See *Publishing* below. |
 
 ### Naming and archive conventions
@@ -76,15 +74,17 @@ Only after the canonical file passes are the copies and the PDF written.
 
 ### PDF generation
 
-The dashboard renders its content at runtime, so the PDF is produced by **pre-rendering**: read the `DATA` block, statically expand all six tiles and all 14 cards with evidence logs open, then convert that static HTML with `weasyprint` (`pip install weasyprint --break-system-packages`).
+The dashboard renders its content at runtime, so the PDF is produced by **pre-rendering**: load the page in a headless DOM, statically expand all six tiles and all 14 cards with evidence logs open, then convert that static HTML with `weasyprint` (`pip install weasyprint --break-system-packages`).
 
 Two things to keep in mind: weasyprint doesn't support the dashboard's `auto-fit` grid, so the print CSS pins the tiles to `repeat(6, 1fr)`; and articles whose evidence logs run to 70-plus rows exceed a page, so `break-inside: avoid` is applied only to short cards — otherwise long ones get pushed whole and leave near-empty pages.
+
+**The render is chunked, and has to be.** Shell calls are capped at about 178 seconds and backgrounded jobs die when the call returns, while a whole-dashboard render now runs well past that. So the pre-rendered HTML is split into one file per article card, each chunk is rendered on its own (roughly 30–110 seconds apiece), and the results are concatenated with `pikepdf` in article order. The merged file is then text-extracted and checked for all 14 articles before it is saved — a chunk that failed silently leaves a gap the page count won't show. This gets slower as the evidence logs grow.
 
 ### Publishing
 
 The refresh commits and pushes automatically as Step 8, to `TecityPMST/14-point-MOU` on `main`.
 
-A run touches five files locally — the canonical HTML, `index.html`, the day's archive HTML and two PDFs — but **only the two HTML files and the README go to GitHub**. `.gitignore` ignores the folder root by default (`/*`) and re-admits four paths by name, so PDFs, `Archive/`, `_to_delete/`, the source PDFs and the token can never enter a commit by accident. The repo stays under 1.5 MB per revision; the OneDrive folder remains the full archive.
+A run touches five files locally — the canonical HTML, `index.html`, the day's archive HTML and two PDFs — but **only the two HTML files and the README go to GitHub**. `.gitignore` ignores the folder root by default (`/*`) and re-admits four paths by name, so PDFs, `Archive/`, the nested site, the source PDFs and the token can never enter a commit by accident. The repo stays under 1.5 MB per revision; the OneDrive folder remains the full archive.
 
 Commit convention:
 
@@ -163,7 +163,7 @@ These are non-negotiable and apply to every evidence row.
 ## Maintainer notes
 
 - **Article summaries are evergreen by design.** Each `summary` field states the obligation, its clock and the compliance test only. All dated and current-state assertions belong in `statusNote` and the evidence log, which are rewritten every run. Keeping dated claims out of summaries stops them rotting between refreshes.
-- **Don't run two refreshes concurrently.** Overlapping runs race on the same files and can leave two timestamped PDFs at root, one of them built from a superseded data block. If a scheduled refresh exists, check its fire time before triggering a manual one.
+- **Don't run two refreshes concurrently.** Overlapping runs race on the same files and can leave two timestamped PDFs at root, one of them built from a superseded data block. There is no scheduled refresh — the daily task was retired on 31 Aug 2026 because it had drifted out of step with this spec; runs are manual. If you set one up again, check its fire time before triggering a manual run.
 - **Trust the disk, not the write.** Confirm renders and checksums against the files as saved. The PDF is built independently of the browser render, so a broken HTML file can still yield a plausible-looking PDF.
 
 ---
