@@ -55,9 +55,9 @@
   .ev { display:flex; gap:10px; padding:7px 0; border-bottom:0.5px solid rgba(0,0,0,0.05); }
   .ev:last-child { border-bottom:none; }
   .ev .date { flex-shrink:0; width:64px; font-size:11px; color:#8a8f96; font-variant-numeric:tabular-nums; }
-  .ev .txt { flex:1; font-size:12.5px; color:#3a4148; line-height:1.5; }
+  .ev .txt { flex:1; min-width:0; font-size:12.5px; color:#3a4148; line-height:1.5; }
   .ev a { font-size:11px; color:#1B4E86; text-decoration:none; border-bottom:1px dotted #9bb6d6; }
-  .srcwrap { display:inline-flex; align-items:center; gap:6px; margin-left:8px; white-space:nowrap; }
+  .srcwrap { display:inline-flex; align-items:center; gap:6px; margin-left:8px; max-width:100%; white-space:normal; }
   .tierdot { width:6px; height:6px; border-radius:50%; display:inline-block; }
   .unv { font-size:9.5px; font-weight:700; color:#8A4A12; background:#F8DCC2; padding:1px 6px; border-radius:999px; letter-spacing:.03em; }
   .src { font-size:11px; color:#8a8f96; }
@@ -93,7 +93,7 @@
 
   <div class="digest">
     <div class="lbl">State of the MOU</div>
-    <div class="body">Day 106 of a 60-day clock that expired forty-six days ago. No status changed: Breached 11, At Risk / Contested 3. The US reply Tehran had awaited arrived: Qatari mediators handed Washington's response to Iran's seven-day plan to Araghchi in Doha on the evening of 29 September, and Iran's government confirmed receipt on 30 September without disclosing its contents (Reuters, Xinhua). An official briefed on the talks said the main disagreement is over sequencing, and Reuters said the plan aims at an enhanced version of the June memorandum including undisclosed nuclear steps, which Iran's Hormuz-first framing contests. Axios reported that Rubio had ordered Iran's UN delegation out of the US on 28 September, and Trump said on 30 September that the US would strike Iran or make a deal, very soon. At sea, Windward and Maritime Executive reported three tankers struck near Hormuz on 29 September, and Windward corroborated the 28 September strike on the Kuwaiti VLCC Al Funtas; transits held at about 17 a day. US sanctions widened further: OFAC added Iran conventional-arms designations to three existing listings on 29 September and wrote the 2020 sectoral sanctions order into the Iran regulations from 30 September. The rial weakened to 2,562,000 per dollar, Brent's December contract settled at $98.03, and the US-led coalition's Iraq mission formally ended on 30 September.</div>
+    <div class="body">Day 110 of a 60-day clock that expired fifty days ago. No status changed: Breached 11, At Risk / Contested 3. Iran has not yet answered the US reply delivered through Qatar on 29 September: Deputy Foreign Minister Gharibabadi said on 4 October that it was still being examined, and three senior Iranian officials told Reuters that a deal is very unlikely and that Tehran would widen its response if US strikes resume. Trump told TIME that bombing could be stepped up after the 3 November midterms and said on 3 October that the conflict would end the easy way or the hard way, and Axios reported that Vance chaired a Camp David meeting on Iran and Yemen on 2 October. Attacks on shipping continued: the Kuwaiti VLCC Kazimah III was struck in the strait on 1 October and a Panama-flagged tanker on 2 October, and Windward counted only 10 transits on 3 October. The US widened sanctions again on 1 October, with 30 Iran-related designations, an automotive and rail sectoral determination and action against the A7 shadow-banking network, while CENTCOM's count of redirected vessels reached 125 and Iran loaded no crude in September for the first time in the war. Whether a third carrier and an amphibious group sailing for the region add to US forces or replace units already there is contested. The rial fell to 2,699,000 per dollar, and Brent's December contract settled at $102.25 on 2 October.</div>
   </div>
 
   <div class="tiles" id="tiles"></div>
@@ -119,8 +119,8 @@
 <script>
 const DATA = {
  "SIGN_LABEL": "17 Jun 2026",
- "REFRESHED": "1 Oct 2026 (10:15 SGT)",
- "DAY_OF_60": 106,
+ "REFRESHED": "5 Oct 2026 (10:32 SGT)",
+ "DAY_OF_60": 110,
  "FINAL_DUE": "16 Aug 2026",
  "STATUS": {
   "done": {
@@ -224,10 +224,130 @@ const DATA = {
     "Ceasefire"
    ],
    "status": "breach",
-   "statusNote": "Still Breached. No US or Israeli strike on Iran was found for 30 September, but attacks on shipping continued. The 28 September strike on the Kuwaiti VLCC Al Funtas, previously single-sourced, is now corroborated: Windward names the ship, hit east of Musandam, and CTP-ISW, citing UKMTO, reports a likely Iranian projectile setting a vessel on fire in the strait that day. Windward and Maritime Executive, citing UKMTO, also report three tankers struck by unknown projectiles on 29 September; Maritime Executive alone names two of them, the ADNOC-operated VLCC Mersin Prosperity and the tanker Sinbad, and reports no casualties. UNVERIFIED - Fars said warning shots were fired at ships breaking Iran's rules, and an IRGC spokesman said it confronts ships in the strait every 24 hours. Trump said on 30 September that the US would either strike Iran or make a deal, very soon (Article 3). There is still no Pentagon or CENTCOM confirmation of the eight Marines reportedly injured on 14 September. On the Houthi front, EASA issued a Saudi airspace bulletin on 30 September citing an expanded missile and drone campaign, and Pakistan's defence minister pledged help for Saudi Arabia. In Lebanon, an Israeli drone hit a Lebanese army vehicle in Nabatieh al-Fawqa on 30 September, wounding soldiers and civilians (CONTESTED figures), and the Rome round of Israel-Lebanon talks still has no date. Article 1 stays Breached.",
+   "statusNote": "Still Breached. No US or Israeli strike on Iran and no Iranian strike on US forces, Israel or Gulf states was found for 1-4 October, but attacks on shipping continued and US threats of renewed bombing sharpened. The Kuwaiti VLCC Kazimah III was struck and set on fire in the strait on 1 October (UKMTO, Windward, Fars, Maritime Executive) and a Panama-flagged tanker was hit outbound off Oman on 2 October (UKMTO, Ambrey); UKMTO counts six ships hit in a week and 110 conflict-related incidents, and CTP-ISW assessed that the IRGC Navy likely attacked the two tankers UKMTO reported. Iran's Persian Gulf Strait Authority named the three tankers struck on 29 September, Al Ruwais, Sinbad and Mersin Prosperity, as being on its non-compliance list, without saying who attacked them; Windward's log stays at 81 and has not yet added the October strikes. UNVERIFIED - Maritime Executive reports that Iran hit a further tanker, the new LR2 Lipsi, on 4 October; separately, a tanker reported explosions nearby off Mokha in the Red Sea that day. After his 30 September strike-or-deal remark, Trump told TIME on 1 October that bombing could be ramped up after the 3 November midterms, warned that Iran would be hit very hard if linked to the flydubai cockpit stabbing, and said on 3 October that it would end the easy way or the hard way (Article 3); he set no deadline. Axios, citing three US officials, reported that Vance chaired a Camp David meeting on Iran and the Houthis on 2 October, with Trump weighing a return to major combat (Article 3). Three senior Iranian officials told Reuters that Iran would widen its response beyond the region and through allies in Lebanon, Yemen and Iraq if US strikes resume (Article 2), and Araghchi warned on 4 October that Iran's response would be much stronger; the US carrier and troop build-up belongs to Article 4. There is still no Pentagon or CENTCOM confirmation of the eight Marines reportedly injured on 14 September. On the Saudi front, Houthi missiles and drones targeted Jizan and Khamis Mushait on 1-2 October and debris injured a resident in Asir; the Houthi claim of a 3 October strike on an Aramco site in Riyadh is CONTESTED by the Saudi-led coalition, and Reuters reports a Saudi-backed offensive with US targeting support. In Lebanon, UNIFIL recorded its highest daily number of Israeli air strikes on 28 September, the IDF said it hit more than 370 Hezbollah targets in September, and Israeli shelling, strikes and demolitions continued through 4 October, with no casualty figures found; UNVERIFIED - the US ambassador relayed an Israeli threat to advance to Beirut unless Hezbollah disarms. The Rome round of Israel-Lebanon talks still has no date. Article 1 stays Breached.",
    "deadline": "No fixed deadline — ongoing compliance",
    "summary": "Both sides declared an immediate and permanent end to military operations on all fronts, including Lebanon, and committed not to use force against each other. The obligation is open-ended with no expiry, and compliance is tested continuously: any strike, tanker attack or retaliation cycle involving either party or the forces it directs counts against it.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Windward's daily page (dated 4 Oct, data as of 3 Oct), CTP-ISW's Iran Updates for 1, 2 and 3 Oct (the 4 Oct update returned 404 and was not yet listed), Maritime Executive, gCaptain, Al Jazeera's Iran page, articles and 1-4 Oct live blogs via AMP (each rendered only a few hours), Iran International's articles and 3-5 Oct live blog, L'Orient Today (4 Oct reports and the 2 and 4 Oct recaps), Naharnet, the UN noon briefing of 1 Oct (no 2 Oct transcript was available), Axios and AP (via CTV), plus searches for UKMTO notices, the Lipsi and Kazimah III, Kuwaiti statements, Houthi strikes on Saudi refineries and on Israel, IRGC seizures and warning shots, strikes inside Iran, a Trump deadline, the Camp David meeting, Pentagon comment on the Marines, Lebanese casualties, UNIFIL incidents and the Rome talks; the Times of Israel live-blog day pages returned 404 or a stale 2020 cache. New: tanker strikes on 1 Oct (Kazimah III) and 2 Oct (a Panama-flagged tanker), an unverified strike on the Lipsi on 4 Oct, the Persian Gulf Strait Authority's listing of the three 29 Sep tankers as non-compliant, explosions near a tanker off Mokha on 4 Oct, Trump's TIME remark that post-midterm bombing is possible plus his flydubai warning (his 'hard way' remark is logged under Article 3), Reuters' report of Iranian plans for a wider response, a contested Houthi strike on Riyadh, Houthi missiles and drones at south-western Saudi Arabia, a Saudi offensive plan with US targeting support, UNIFIL's record day of Israeli air strikes on 28 Sep, continued Israeli fire in south Lebanon and an unverified Israeli threat to advance to Beirut. The 2 Oct Camp David meeting, now sourced to Axios, is logged under Article 3. No US or Israeli strike on Iran and no Iranian strike on US forces, Israel or Gulf states; no IRGC seizure or new warning-shot claim; no Pentagon or CENTCOM confirmation of the eight Marines; no Houthi fire at Israel; no Lebanese casualty figures for 1-4 Oct; no date for the Rome talks. Article 1 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Windward daily page (read directly 5 Oct; page dated 4 Oct, data as of 3 Oct)",
+     "url": "https://insights.windward.ai/",
+     "text": "Read directly on 5 October: Windward's incident log still stood at 81 (74 attacks, 7 near misses) and did not yet carry separate entries for the 1-2 October strikes, although its summary reported that a Kuwait-flagged VLCC was hit by an unknown projectile at 17:50 UTC on 1 October and caught fire, the fifth vessel struck since 28 September, all five transiting with AIS off. Windward said IRGC-linked media called that ship an 'offending supertanker' transiting illegally. The log now names the third tanker struck on 29 September as the Liberia-flagged products tanker Al Ruwais, alongside Mersin Prosperity and Sinbad."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Abbas Araghchi, Iranian foreign minister; IRGC commander Ali Fadavi; MP Abdolhossein Hemmati (via Iran International live blog and L'Orient Today)",
+     "url": "https://www.iranintl.com/en/liveblog/202610033293",
+     "text": "Foreign Minister Araghchi warned on 4 October that if Iran's enemies again chose military confrontation, Iran's response would be much stronger and more decisive (Iran International; L'Orient Today; his remarks on diplomacy are logged under Article 3). IRGC commander Ali Fadavi claimed US warships had pulled back more than 1,000 km from Iran's borders, and MP Abdolhossein Hemmati said that if Iran could not export oil from the region, no other country would be allowed to export through that route either. None of the statements announced a specific action."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "press",
+     "src": "Maritime Executive (citing UKMTO); Iran International (live blog, citing UKMTO)",
+     "url": "https://maritime-executive.com/article/tanker-reports-attack-south-of-bab-el-mandeb",
+     "text": "A tanker reported multiple explosions close to the vessel at about 16:50 UTC on 4 October, about 60 nautical miles south of Mokha in the southern Red Sea, according to UKMTO; the crew were unharmed and no environmental impact was reported. The vessel was not named and no group claimed responsibility."
+    },
+    {
+     "date": "3-4 Oct",
+     "tier": "press",
+     "src": "Maritime Executive (4 Oct, citing Vanguard Tech, industry media and the Wall Street Journal); Al Jazeera (3 Oct live-blog recap, citing IRIB)",
+     "url": "https://maritime-executive.com/article/iran-keeps-up-pace-of-strikes-with-attack-on-brand-new-lr2-tanker",
+     "text": "UNVERIFIED - Maritime Executive reported that Iran hit another tanker in the Strait of Hormuz on Sunday 4 October, which Vanguard Tech identified as the Lipsi, a new LR2 linked to a Greek operator and a Chinese owner; industry media reported engine-room damage, and a US official told the Wall Street Journal that Iran's ship-targeting capability appears to be improving. Al Jazeera's 3 October recap relayed an IRIB report that an oil tanker had exploded in the strait, with no time, position or name, so a match is unconfirmed. No UKMTO notice naming the Lipsi was found.",
+     "thin": true
+    },
+    {
+     "date": "2-4 Oct",
+     "tier": "press",
+     "src": "L'Orient Today (citing the Israeli army and its correspondents); Al Jazeera (live blog, 4 Oct)",
+     "url": "https://today.lorientlejour.com/article/1549600/2-israeli-soldiers-injured-in-operational-accident-as-army-continues-attacks-in-the-south.html",
+     "text": "Israeli operations in south Lebanon continued through the weekend: on 3 October Israeli artillery, tank and helicopter fire hit 15 towns, including Braasheet, Kfar Rummane, Arnoun, Yater and Kounin, with demolitions in six, and more than 35 shells hit Mansouri overnight (L'Orient Today). On 4 October three Israeli shells landed near al-Jadeed TV and Nabatieh news-site crews near Mayfadoun without injuring them, and Al Jazeera reported strikes around Haddatha, Wadi Hassan and Srifa. Two Israeli soldiers were wounded, one seriously, by a grenade explosion during a search operation in Majdal Zoun on 2 October, which the army called an operational accident. No Lebanese casualty figures were found for 1-4 October."
+    },
+    {
+     "date": "2-4 Oct",
+     "tier": "press",
+     "src": "Reuters (via gCaptain), citing six people with knowledge of the plans; Al Jazeera (live blog and report, citing the Saudi-led coalition and Yemen's armed forces)",
+     "url": "https://gcaptain.com/saudis-plan-assault-on-houthis-to-break-red-sea-chokehold/",
+     "text": "Reuters reported on 2 October that Saudi Arabia plans an offensive against the Houthis within weeks, led by Yemeni ground forces with Saudi air support, and that Washington provides military advisers, intelligence and targeting information for Saudi air operations, while Trump has reportedly declined requests for direct US combat support. Coalition aircraft struck Sanaa and Saada on 3 October, with the Houthis counting at least 26 strikes on Sanaa, and on 4 October the coalition reported 97 strikes on the Tor al-Baha and Taiz fronts and claimed more than 260 Houthi fighters killed (Al Jazeera)."
+    },
+    {
+     "date": "3 Oct",
+     "tier": "press",
+     "src": "Al Jazeera (citing Houthi spokesman Yahya Saree and coalition spokesman Turki al-Maliki); L'Orient Today; CTP-ISW Iran Update, 3 Oct (citing Reuters and geospatial analysis)",
+     "url": "https://www.aljazeera.com/news/2026/10/4/houthis-claim-strike-on-saudi-energy-facility-as-yemen-fighting-intensifies",
+     "text": "CONTESTED: Houthi military spokesman Yahya Saree claimed a ballistic-missile and drone attack on a Saudi Aramco site in Riyadh on 3 October, and large plumes of smoke and fire were visible near the facility (Al Jazeera). Saudi-led coalition spokesman Turki al-Maliki dismissed the claims as misleading (Al Jazeera; L'Orient Today). CTP-ISW assessed that the Houthis likely attacked Aramco's Riyadh refinery, citing Reuters and a geospatial analyst who identified attacks on refineries in Riyadh and Yanbu within 24 hours; no Aramco statement was found."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "press",
+     "src": "gCaptain (citing UKMTO); Maritime Executive (citing UKMTO and Ambrey); CTP-ISW Iran Update, 3 Oct",
+     "url": "https://maritime-executive.com/article/two-more-tankers-in-hormuz-report-strikes-bringing-total-to-six-in-a-week",
+     "text": "An outbound tanker was struck by an unknown projectile at 11:22 UTC on 2 October, causing a small fire and a blackout; the fire was put out, the ship continued under way and no casualties were reported (UKMTO via gCaptain). Ambrey identified it as a Panama-flagged crude tanker about 5.3 nautical miles off Oman, and Maritime Executive cited UKMTO as counting six ships struck in a week and 110 incidents directly related to the US-Iran conflict. CTP-ISW's 3 October update assessed that the IRGC Navy likely attacked two tankers reported by UKMTO."
+    },
+    {
+     "date": "1-2 Oct",
+     "tier": "official",
+     "src": "Iran's Persian Gulf Strait Authority (via Al Jazeera live blog and Maritime Executive)",
+     "url": "https://www.aljazeera.com/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
+     "text": "Iran's Persian Gulf Strait Authority said on 1 October that several tankers had been attacked in the strait in recent days, including three UAE-owned or chartered ships, Al Ruwais, Sinbad and Mersin Prosperity, which it said had tried to transit several times in two months and are on its latest non-compliance list (Al Jazeera). It also told Iranian media that the ships being targeted included those on its non-compliant list (Maritime Executive; the list's reported size is logged under Article 5). The authority did not say who carried out the attacks."
+    },
+    {
+     "date": "29 Sep-2 Oct",
+     "tier": "analysis",
+     "src": "CTP-ISW Iran Updates, 1 and 2 Oct (citing the Saudi-led coalition and a military spokesman's posts on X); Al Jazeera (live blog, citing Saudi Civil Defence); L'Orient Today",
+     "url": "https://www.criticalthreats.org/analysis/iran-update-october-2-2026",
+     "text": "The Saudi-led coalition said on 1 October that a Houthi drone hit the Taibah power distribution station in Madinah on 29 September, damaging a transformer; Houthi media denied it, and Lebanon's foreign ministry condemned the attack (CTP-ISW; L'Orient Today). Saudi air defences then intercepted one ballistic missile over Jizan and four ballistic missiles and four drones over Khamis Mushait on 1-2 October (CTP-ISW), and debris from an intercepted missile injured a resident and damaged a prayer room and vehicles in Ahad Rafidah, Asir, on 2 October (Saudi Civil Defence via Al Jazeera)."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "gCaptain (citing UKMTO Warning 147-26); Maritime Executive; Al Jazeera (live blogs, citing Fars and UKMTO); Windward",
+     "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-attacks-continue/",
+     "text": "The Kuwait Oil Tanker Co. VLCC Kazimah III (317,250 dwt) was struck by an unknown projectile while transiting the Strait of Hormuz at about 17:50 UTC on 1 October and caught fire; UKMTO said the crew were safe (Warning 147-26 via gCaptain), and five Indian crew members were later evacuated (Al Jazeera). Fars put the strike about 8 km off Oman's coast and said the tanker was travelling illegally. Maritime Executive called it the second Kuwaiti state VLCC hit in four days, after Al Funtas."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "Donald Trump, TIME interview (via Axios and AP via CTV News) and remarks reported by Al Jazeera's live blog",
+     "url": "https://www.axios.com/2026/10/01/trump-time-interview-iran-democrats-ai-netanyahu",
+     "text": "In a TIME interview published on 1 October, Trump said ramping up the bombing of Iran after the 3 November midterms was possible (AP; his verdict on Iran's offer is logged under Article 3); Axios reported that he again threatened to annihilate Iran. Later that day he warned that Iran would be hit very hard if it was involved in the 30 September flydubai cockpit stabbing (Al Jazeera), for which no Iranian link has been established. He set no deadline."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Reuters (Parisa Hafezi; via 933thedrive, Iran International and CTP-ISW Iran Update, 1 Oct), citing three senior Iranian officials and a person familiar with the discussions",
+     "url": "https://www.933thedrive.com/2026/10/01/iran-readies-harder-retaliation-if-attacked-as-diplomacy-faces-long-odds/",
+     "text": "Three senior Iranian officials and a person familiar with the discussions told Reuters on 1 October that Iranian decision-makers are reviewing plans to widen potential targets beyond US assets in the region, possibly to countries outside the region and to states supporting US operations, if the United States resumes large-scale strikes. According to the report, allied groups in Lebanon, Yemen and Iraq have been told to prepare a coordinated response, and Iranian officials see an agreement as very unlikely (also relevant to Article 2)."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Naharnet (citing the Lebanese daily Al-Modon)",
+     "url": "https://www.naharnet.com/stories/en/322865-israel-threatens-beirut-invasion-if-hezbollah-doesn-t-disarm-report-says",
+     "text": "UNVERIFIED - Naharnet, citing Al-Modon, reported that US Ambassador Michel Issa relayed Israeli warnings in September to Sheikh Ali al-Khatib, deputy head of the Higher Islamic Shiite Council, that Israel would mount a full-scale invasion reaching Beirut if Hezbollah does not disarm, particularly in the Jabal al-Rihan and Iqlim al-Tuffah areas. The report said Israel wants Lebanese army units deployed there to have no Hezbollah or Shiite affiliation, a condition Lebanon rejected. No US, Israeli or Lebanese official confirmation was found.",
+     "thin": true
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Naharnet (citing an Israeli military statement and local reports)",
+     "url": "https://www.naharnet.com/stories/en/322863-israel-says-air-force-hit-over-370-hezbollah-targets-in-lebanon-last-month",
+     "text": "The Israeli military said on 1 October that its air force struck more than 370 Hezbollah targets in southern Lebanon during September, out of more than 500 targets hit in Lebanon and Gaza that month. Overnight into 1 October, Israeli air strikes and artillery hit Mansouri, Zawtar al-Sharqiyeh, Ali al-Taher and Hadatha-Harees, Israeli forces carried out detonations in Houla and Mansouri, and machine-gun fire was reported near Hadatha and Wadi Slouqi; Naharnet gave no casualty figures."
+    },
+    {
+     "date": "28-30 Sep",
+     "tier": "official",
+     "src": "UN Spokesperson Stephane Dujarric (noon briefing, 1 Oct), relaying UNIFIL",
+     "url": "https://transcripts.un.org/en/briefing/sg/2026-10-01",
+     "text": "UNIFIL told the UN that 28 September saw the highest daily number of Israeli air strikes its peacekeepers had recorded, and that six Israeli naval vessels crossed into Lebanese territory off Naqoura over two days. UNIFIL generals were blocked or stopped several times at roadblocks in Sector East, preventing peacekeepers from completing missions, and nearby demolition activity caused minor damage inside a UNIFIL position at Maas el Jebel."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -2933,7 +3053,7 @@ const DATA = {
      "url": "https://www.foxnews.com/live-news/iran-drone-strait-of-hormuz-israel-lebanon-conflict-june-26-2026"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 2,
@@ -2942,10 +3062,110 @@ const DATA = {
     "Sovereignty"
    ],
    "status": "breach",
-   "statusNote": "Still Breached. The US-led coalition's military mission in Iraq ended on 30 September; Trump called it a victory and said it was 'time for America to go home', and the Pentagon said the two countries would now prioritise bilateral security and intelligence cooperation (via CTP-ISW; Article 4). Whether a small residual force remains is still CONTESTED (Soufan Center vs Reuters and Arab News), and no official statement has settled it; UNVERIFIED - Iran International quoted CENTCOM on a completed exit from Erbil Air Base and the Pentagon on Baghdad's responsibility for Iran-aligned militias. PM al-Zaidi said Washington and the factions had pledged no attacks for 90 days after the exit (Al Jazeera), but Kataib Hezbollah's security official threatened on 28 September to topple the government 'by all means' if it acts against Iranian interests (CTP-ISW, Shafaq News). UNVERIFIED - UK Prime Minister Andy Burnham told the BBC there were strong indications Iran played a part in the RAF Fairford incident; Iran denies any link and the five suspects remain on bail without charge (CONTESTED; Times of Israel). President Pezeshkian said Iran's enemies, having failed militarily, are trying to divide Iranians. CONTESTED: Syria said it broke up a Hezbollah-linked rocket cell in Daraa, which Hezbollah denies. The reported Houthi strike on a government base in Lahj still has no second outlet. Article 2 stays Breached.",
+   "statusNote": "Still Breached. The UK-Iran dispute over RAF Fairford deepened: counter-terrorism police arrested a 27-year-old dual British-Iranian national in London on 1 October and are examining possible foreign state involvement, Araghchi said Britain was barking up the wrong tree, and Deputy Foreign Minister Takht-Ravanchi summoned the UK ambassador on 1 October, accusing London of complicity in US-Israeli aggression; Iran's role stays CONTESTED and Burnham's 'strong indications' claim remains UNVERIFIED. Two Iranian nationals were charged on 2 October over a plot against Manchester's Jewish community, with police alleging contact with an overseas third party who may be in Iran. The Pentagon said on 4 October that the US B-1 bombers at Fairford had returned to their home stations, a move Axios tied to threats of an Iranian attack on the base. UNVERIFIED - Iran summoned Norway's ambassador on 4 October over Starlink transmissions it ties to US and Israeli interference (Iran International only). In Iraq, Kataib Hezbollah suspended operations after the US exit except against hostile aircraft and denied any disarmament deal, al-Zaidi set 30 June 2027 for disarmament and two smaller factions signed up, and Quds Force commander Qaani said the US had been expelled from Iraq. The Pentagon's statement on leaving Erbil now has a second source, but no figure for any remaining US personnel has been published, so the residual-force question stays CONTESTED; no attack by Iraqi militias was found in the window, consistent so far with al-Zaidi's 90-day no-attack assurance. CONTESTED: Reuters reported secret Syria-Hezbollah talks in Turkey, which Syria and Turkey deny, and Syria's Daraa cell accusation has no new detail. UNVERIFIED - an IRGC general, Hossein Yekta, was part of an Iranian delegation to south Lebanon on 1 October (CTP-ISW only). Trump said Hezbollah and Iran's other proxies share Iran's fate, Lebanese PM Salam told Iranian officials that Lebanon wants state-to-state relations based on mutual respect, and Reuters reported that Iran told allies in Lebanon, Yemen and Iraq to prepare a coordinated response (Article 1). In Yemen the Houthis cut the Taiz-Aden road on 4 October and the government announced an offensive to retake Houthi-held areas; UNVERIFIED - the WSJ says Iranian weapons and Chinese components fuel the Houthi advance. Article 2 stays Breached.",
    "deadline": "No fixed deadline",
    "summary": "A mutual undertaking to respect each other's sovereignty and territorial integrity and to refrain from interference in internal affairs. The MOU sets no metric or monitoring body for this article, so compliance is read from sovereignty-violation claims by either party or by third states, and from the conduct of aligned forces and proxies.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Al Jazeera (Iran and Lebanon pages, articles on the RAF Fairford arrest and Iran's denial, the Syria-Hezbollah report, the flydubai incident and the Manchester charges, and the 1-4 Oct live blogs via AMP), Iran International (articles and the 3-5 Oct live blog), Press TV, The National, L'Orient Today (AFP), Asharq Al-Awsat, UNI, Naharnet, CTP-ISW's 1-3 Oct Iran Updates (4 Oct not yet posted) and gCaptain (Reuters), plus searches for the UK ambassador's summons, the bombers at Fairford, the Norway Starlink protest, the Yekta delegation (including in Arabic), the residual US force in Iraq, Kataib Hezbollah statements, militia attacks in Iraq and Kurdistan, spy arrests and executions, and Iranian accusations over Sistan-Baluchestan; Anadolu was blocked by robots.txt. New: a dual British-Iranian national arrested over RAF Fairford, Iran's summons of the UK ambassador, the return of the US B-1 bombers at Fairford to the United States (Pentagon, via Axios), charges against two Iranians over a Manchester plot, Kataib Hezbollah's suspension of operations and denial of any disarmament deal, a second source for the Pentagon's Erbil statement, Qaani's claim that the US was expelled from Iraq, a contested Reuters report of Syria-Hezbollah talks, an unverified IRGC delegation to south Lebanon, Trump's remark on Iran's proxies, Salam's call for state-to-state ties with Iran, an unverified Norway summons over Starlink, and the Houthi advance near Taiz with an unverified WSJ report on Iranian and Chinese supplies. No figure for any residual US force in Iraq; no militia attack in Iraq or Kurdistan; no new spy arrest or espionage execution; no new claim of US or Israeli covert action inside Iran; no new detail on the Daraa cell. Article 2 stays Breached."
+    },
+    {
+     "date": "4-5 Oct",
+     "tier": "press",
+     "src": "L'Orient Today (citing security sources and Rashad al-Alimi); Iran International (live blog, citing Yemeni Foreign Minister Afrah al-Zouba)",
+     "url": "https://today.lorientlejour.com/article/1549636/the-7-pm-recap-houthi-advance-and-government-announces-a-counteroffensive-iran-raises-the-stakes-israeli-shells-hit-close-to-journalists-in-south-leba.html",
+     "text": "Houthi forces captured the al-Safiya sector on 4 October, including a police station, cutting the main supply route between Taiz and Aden, and Presidential Leadership Council chief Rashad al-Alimi announced military operations to recapture all remaining Houthi-held areas (L'Orient Today). Yemen's foreign minister, Afrah al-Zouba, said on 5 October that Yemenis have the right to restore their state and called for international support against the Iran-backed Houthis (Iran International)."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Pentagon statement (via Axios); Iran International live blog (citing Reuters and a Pentagon spokesman)",
+     "url": "https://www.axios.com/2026/10/04/us-b-1-bombers-evacuated-from-uk-base-after-attack-threats-from-iran",
+     "text": "The Pentagon said on 4 October that the US B-1 bombers deployed to RAF Fairford, about a dozen according to Axios, had returned to their home stations in the United States, adding that US bomber forces remain ready to strike from the continental US (Axios; Iran International, citing Reuters). Axios tied the departure to threats of an Iranian attack on the base after the arrests over the suspected plot, citing a reported Israeli intelligence warning; Iran denies any role in the Fairford incident."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "press",
+     "src": "Iran International (live blog, citing Reza Hassaninejad of Iran's foreign ministry); CTP-ISW Iran Update, 2 Oct (citing IRGC-affiliated media)",
+     "url": "https://www.iranintl.com/en/liveblog/202610033293",
+     "text": "UNVERIFIED - Iran International's live blog reported on 4 October that Iran's foreign ministry summoned Norway's ambassador, Paul Bjørnstad, and handed him a protest note demanding that Norway, under its ITU obligations, stop unauthorised Starlink transmissions over Iranian territory, which Tehran says the US and Israel use for interventionist activities; IRGC-affiliated media had said ground forces seized a Starlink device near Rask on 2 October (CTP-ISW). No second outlet was found for the summons.",
+     "thin": true
+    },
+    {
+     "date": "2-3 Oct",
+     "tier": "press",
+     "src": "Al Jazeera (citing Counter Terrorism Policing, the Crown Prosecution Service and Home Secretary Mahmood); Iran International",
+     "url": "https://www.aljazeera.com/news/2026/10/3/two-iranians-charged-over-alleged-plot-targeting-jewish-community-in-uk",
+     "text": "Two Iranian nationals, Rahman Salehi, 34, and Salam Ahmadyan, 36, arrested in Manchester on 20 September, were charged on 2 October with preparing acts of terrorism against the city's Jewish community on or before Yom Kippur. Police alleged the men were in contact with an overseas third party who may be in Iran, and Home Secretary Mahmood referred to Iran's targeting of Jewish communities, but no official said they acted for the Iranian state. No Iranian response to the charges was found."
+    },
+    {
+     "date": "1-2 Oct",
+     "tier": "official",
+     "src": "Donald Trump, remarks to a Lebanese reporter (via Naharnet)",
+     "url": "https://www.naharnet.com/stories/en/322877-trump-says-fate-of-hezbollah-and-other-proxies-tied-directly-to-iran",
+     "text": "Asked by a Lebanese reporter, Trump said the fate of Hezbollah and Iran's other regional proxies is tied directly to Iran's: 'as goes Iran, so goes the proxies'. Naharnet carried no further remarks on Lebanon."
+    },
+    {
+     "date": "30 Sep-2 Oct",
+     "tier": "press",
+     "src": "L'Orient Today (AFP); The National (citing Kataib Hezbollah secretary general Ahmad al-Hamidawi and PM Ali al-Zaidi); CTP-ISW Iran Updates, 1-2 Oct; Al Jazeera (live blog, citing Esmail Qaani)",
+     "url": "https://thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq",
+     "text": "Kataib Hezbollah leader Ahmad al-Hamidawi ordered fighters to suspend military activities in Iraq after the last US troops left, except for targeting hostile aircraft violating Iraqi airspace, denied any disarmament deal with PM al-Zaidi and said the resistance had won this round (AFP via L'Orient Today; The National). Al-Zaidi declared 1 October the start of full sovereignty with a state monopoly on weapons, set 30 June 2027 as the deadline for disarmament and said Iraq would buy air defences, while Kataib Sayyid al-Shuhada and Harakat Ansar Allah al-Awfiya announced their commitment to a Coordination Framework disarmament agreement (CTP-ISW). IRGC Quds Force commander Esmail Qaani said the United States had been expelled from Iraq with all its capabilities (Al Jazeera)."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "Majid Takht-Ravanchi, Iranian deputy foreign minister (via Press TV and Iran International); CTP-ISW Iran Update, 1 Oct",
+     "url": "https://www.iranintl.com/en/202610011296",
+     "text": "Deputy Foreign Minister Majid Takht-Ravanchi summoned British Ambassador Hugo Shorter on 1 October to protest what Tehran called baseless accusations linking Iran to the suspected RAF Fairford plot, and accused Britain of complicity in US-Israeli aggression by allowing its bases to be used (Iran International; Press TV). Shorter said he would convey the protest to London. CTP-ISW reported that the foreign ministry also called Prime Minister Burnham's comments false accusations."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Al Jazeera (citing Counter Terrorism Policing, senior national coordinator Vicki Evans, Abbas Araghchi and Iran's embassy in London); CTP-ISW Iran Update, 1 Oct",
+     "url": "https://www.aljazeera.com/news/2026/10/1/british-police-arrest-uk-iranian-national-over-airbase-incident",
+     "text": "CONTESTED: Counter-terrorism police arrested a 27-year-old dual British-Iranian national in central London on 1 October on suspicion of preparing terrorist acts in connection with the RAF Fairford incident and questioned a 26-year-old British man under caution; senior national coordinator Vicki Evans said police were looking at all angles, including possible foreign state involvement. Foreign Minister Araghchi said British authorities were 'barking up the wrong tree', and Iran's embassy called the allegations fabricated speculation. The five men arrested near the base on 27 September remain on bail."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Reuters (via Al Jazeera), citing six sources; Syria's Ministry of Information and Turkey (statements on X); Naharnet; CTP-ISW Iran Update, 1 Oct",
+     "url": "https://www.aljazeera.com/news/2026/10/1/syria-denies-officials-held-secret-talks-with-hezbollah-in-turkiye",
+     "text": "CONTESTED: Reuters, citing six sources including two Syrian officials, a US official and a Lebanese security source, reported that Syrian officials and Hezbollah held secret talks in Turkey in September, brokered by Turkish security agencies, at which Syria said it would not intervene militarily in Lebanon and asked for help stopping cross-border smuggling and dismantling sleeper cells in southern Syria. Syria's Ministry of Information said no such meeting took place, and Turkey called the report baseless; no Hezbollah comment was reported."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "analysis",
+     "src": "CTP-ISW Iran Update, 1 Oct",
+     "url": "https://www.criticalthreats.org/analysis/iran-update-october-1-2026",
+     "text": "UNVERIFIED - CTP-ISW reported that a senior Iranian delegation of people close to Supreme Leader Mojtaba Khamenei visited southern Lebanon on 1 October, including IRGC Brig. Gen. Hossein Yekta, who has played a significant role in internal security and recruitment, and framed the visit in the context of Hezbollah's efforts to rebuild its military capacity. No Lebanese, Iranian or other outlet carrying the visit was found, including in Arabic-language searches.",
+     "thin": true
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Wall Street Journal (via Iran International), citing UN reports and arms experts",
+     "url": "https://www.iranintl.com/en/202610014681",
+     "text": "UNVERIFIED - Iran International relayed a Wall Street Journal report that the Houthis' territorial gains and maritime threat rest on Iranian-designed missiles, drones, sea mines and drone boats, with the Quds Force supplying components and trainers since about 2015, and on a growing flow of Chinese dual-use components as Iranian smuggling routes face more interdiction. The report said the Houthis have struck seven vessels in the Red Sea and one in the Gulf of Aden since 20 July, four of them Saudi-flagged. The WSJ article itself could not be read.",
+     "thin": true
+    },
+    {
+     "date": "30 Sep",
+     "tier": "official",
+     "src": "Sean Parnell, chief Pentagon spokesman (via Asharq Al-Awsat); UNI",
+     "url": "https://english.aawsat.com/arab-world/5324246-us-military-says-its-withdrawal-troops-iraq-complete",
+     "text": "Second source for the Erbil departure previously logged from Iran International alone and for the Parnell statement logged from CTP-ISW (Article 4): Pentagon spokesman Sean Parnell said US troops and equipment had completed an orderly departure from the air base in Erbil, marking a transition from a wartime coalition mission to an Iraqi-led effort with a more normal bilateral security relationship, and that the US would continue targeted training and intelligence support for Iraqi partners. About 100 British personnel left Erbil alongside the US forces (UNI). Neither report gives a figure for any US personnel remaining in Iraq, so the residual-force question stays CONTESTED."
+    },
+    {
+     "date": "30 Sep",
+     "tier": "official",
+     "src": "Nawaf Salam, Lebanese prime minister (via Naharnet)",
+     "url": "https://www.naharnet.com/stories/en/322842-salam-says-lebanon-wants-state-to-state-relation-with-iran",
+     "text": "Meeting an Iranian delegation in New York, Lebanese PM Nawaf Salam said Lebanon wants a state-to-state relationship with Iran based on mutual respect, and said Hezbollah, by joining the government, had accepted that all weapons be placed under exclusive state authority. He added that Secretary of State Rubio supports a verification mechanism for the agreement with Israel. This late-30 September item was not in the previous log."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -5152,7 +5372,7 @@ const DATA = {
      "tier": "analysis"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 3,
@@ -5161,10 +5381,87 @@ const DATA = {
     "Negotiations"
    ],
    "status": "breach",
-   "statusNote": "Still Breached. On Day 106 there is still no final deal, round, deal text or mutually agreed extension, though the US reply Tehran had awaited has now arrived. Reuters reported that Qatari mediators conveyed Washington's feedback on Iran's seven-day plan to Araghchi in Doha on the evening of 29 September, and an official briefed on the talks said the main disagreement is over sequencing, which Reuters described as the order of steps rather than their components. Government spokeswoman Fatemeh Mohajerani confirmed on 30 September that Iran had received the US response, which Araghchi presented to the cabinet that day, without disclosing its contents or Tehran's next step (Xinhua; Middle East Monitor). Axios, citing two sources, and Fox News reported that Secretary Rubio ordered Iran's UN delegation, including Araghchi, to leave the US on the evening of 28 September; it flew to Doha early on 29 September. In the Oval Office on 30 September, Trump said the US would either strike Iran or make a deal and that the standoff would end very soon one way or the other (Middle East Eye, Fox News, Axios). Qatar's foreign ministry has issued no statement of its own on the hand-over. No Iranian counter-reply, new round, venue, Oman follow-on date, extension or walkout was reported. Article 3 stays Breached.",
+   "statusNote": "Still Breached. On Day 110 there is still no final deal, round, deal text or mutually agreed extension, and Iran has not yet answered the US reply that Qatari mediators delivered on 29 September. Deputy Foreign Minister Kazem Gharibabadi said on 4 October that the US views conveyed by mediators were still being examined and that Tehran would announce its final position through the appropriate channels while preparing for other scenarios (Press TV; Al Jazeera). Reuters, citing three senior Iranian officials, reported on 1 October that the reply is under review but that an agreement is very unlikely even if indirect talks continue, with Tehran's conditions including an end to fighting, the lifting of the blockade, the release of at least $12 billion in frozen funds and an oil-sanctions waiver. Araghchi told foreign ambassadors in Tehran on 4 October that only negotiation, not force or new sanctions, can end the war, and Pezeshkian said on 1 October that Iran will not walk away from dialogue. UNVERIFIED: Al Jazeera, citing Nournews, reported Ghalibaf saying on 4 October that Washington had made some proposals through a mediator and that Hormuz will not open until Iran's seven conditions under the Islamabad memorandum are met. On the US side, Trump told TIME (published 1 October) that Iran's offer is not good enough and that stepped-up strikes after the midterms are possible, and said in Denton, Texas, on 1 October that the confrontation would end very soon; Axios (three US officials) reported that Vance chaired an unannounced Camp David meeting on Iran and Yemen on 2 October, with Witkoff present and Trump weighing renewed major combat as negotiations stall. On 3 October Trump said Iran had been decimated and had virtually given up plans for a nuclear weapon, and that it would end the easy way or the hard way (Al Jazeera; Iran International); he set no deadline. CONTESTED: Axios reported that two members of Iran's UN delegation were removed on 3 October after ignoring Rubio's 28 September order, while Araghchi said all had left as scheduled. No Qatari, Pakistani or Omani statement, envoy meeting, new round, venue, deadline, extension or walkout was reported, and Qatar's foreign ministry news page carries no Iran item (Article 12). Article 3 stays Breached.",
    "deadline": "Lapsed — 60-day window expired 16 Aug 2026 (Day 62)",
    "summary": "The master clock for the whole MOU: a comprehensive final agreement is to be concluded within 60 days of signing — by about 16 Aug 2026 — extendable only by mutual consent. Compliance is tested by whether negotiating rounds are actually taking place and converging, and by whether either side has walked away or sought an extension.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Reuters (via 933thedrive; US News returned 403), Axios (world and politics pages and its 1-3 Oct Iran stories), Al Jazeera (Iran page, 2 and 4 Oct articles, 2-4 Oct live blogs via AMP; the 4 Oct blog's Trump entry did not render), Press TV, the Times of Israel 1-4 Oct live blogs, Iran International, Middle East Monitor, TRT World, the Jerusalem Post, CTP-ISW's 1-3 Oct Iran Updates (each says nothing significant on negotiations; the 4 Oct update returned 404), Just Security's 2 Oct Early Edition, The Peninsula and Qatar's MFA news page (Article 12), plus searches for Iran's answer, Witkoff and Kushner, Qatari, Pakistani and Omani mediation, Larijani and Trump's 'hard way' remark; Iran's MFA, Nournews, Mehr, IRNA, Tehran Times and Pakistan's MFA sites served stale or undated pages. New: Gharibabadi says the US reply is still under review (4 Oct); Reuters' 1 Oct report that an agreement is very unlikely; Araghchi to ambassadors (4 Oct); Ghalibaf via Nournews (unverified); Trump's TIME interview, Denton remarks and 3 Oct 'hard way' warning (Al Jazeera and Iran International); the 2 Oct Camp David meeting; the contested removal of two delegation members; Pezeshkian on dialogue. No Iranian counter-reply, new round, venue, envoy meeting, mediator statement, deadline, extension or walkout. Article 3 stays Breached."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Kazem Gharibabadi, Iranian deputy foreign minister, to reporters (via Press TV and Al Jazeera live blog)",
+     "url": "https://www.presstv.co.uk/Detail/2026/10/04/777609/Iran-Gharibabadi-Iran-proposal-US-replies",
+     "text": "Gharibabadi told reporters on 4 October that mediators had conveyed the US views on the proposal Araghchi presented at the UN General Assembly and that those views were still being examined. Al Jazeera quoted him saying Tehran would announce its final position through the appropriate channels once ready and remained prepared for other scenarios. As of 4 October, Iran had therefore not answered the US reply delivered on 29 September."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Abbas Araghchi, Iranian foreign minister, address to foreign ambassadors in Tehran (via AFP in the Times of Israel live blog; Al Jazeera)",
+     "url": "https://www.timesofisrael.com/liveblog_entry/iran-tells-us-there-is-no-military-solution-to-middle-east-war/",
+     "text": "Addressing foreign ambassadors in Tehran on 4 October, Araghchi said there was no military solution to the war, nor one based on new sanctions, and that only negotiations grounded in justice and fairness could end it. Al Jazeera reported him saying Iran was serious about diplomacy but more prepared than before if the US resumed military action. He gave no detail of Tehran's answer to the US reply."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Mohammad Bagher Ghalibaf, Majlis speaker and chief negotiator (via Nournews, as reported by Al Jazeera)",
+     "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
+     "text": "UNVERIFIED - Al Jazeera reported that Nournews quoted Ghalibaf on 4 October as saying Washington had made 'some proposals through a mediator' in the days after the US reply, and that the strait will not open until Iran's seven conditions based on the Islamabad memorandum are met. It is unclear whether the proposals are the 29 September reply itself or a further message; Nournews could not be read and no second outlet was found.",
+     "thin": true
+    },
+    {
+     "date": "3-4 Oct",
+     "tier": "press",
+     "src": "Axios (Barak Ravid, citing Secretary Rubio's office); Abbas Araghchi on X (via Press TV)",
+     "url": "https://www.axios.com/2026/10/03/iran-un-kicked-out-rubio",
+     "text": "CONTESTED: Axios reported that two members of Iran's UN General Assembly delegation who had stayed in New York despite Rubio's 28 September order to leave were removed from the US on 3 October, having departed only on the night of 2 October and the morning of 3 October, and Rubio's office said the secretary 'means business'. Araghchi replied on X that all delegation members had left as scheduled, one of them early, and called the US account a sign of desperation and defeat that breached host-country obligations."
+    },
+    {
+     "date": "3 Oct",
+     "tier": "official",
+     "src": "Donald Trump, remarks to reporters (via Al Jazeera live blog, 21:36 GMT, and Iran International)",
+     "url": "https://www.aljazeera.com/news/liveblog/2026/10/3/iran-war-live-fighting-intensifies-in-yemen-hundreds-killed-or-injured",
+     "text": "Trump told reporters on 3 October that Iran had been decimated and had virtually given up any plans for a nuclear weapon, so the only question was whether the conflict ended 'the easy way or the hard way' (Al Jazeera). Iran International reported him saying he was approaching a decision on Iran. He set no deadline and did not say what the hard way would involve."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "press",
+     "src": "Axios (Barak Ravid, citing three US officials); also Iran International and Middle East Monitor",
+     "url": "https://www.axios.com/2026/10/03/trumps-cabinet-camp-david-iran-war-yemen-houthis",
+     "text": "Axios reported that Vice President Vance chaired an unannounced, hours-long meeting at Camp David on 2 October with Rubio, Hegseth, envoy Witkoff, CIA director Ratcliffe, General Caine and Treasury Secretary Bessent on next steps in the Iran war and the Saudi-Houthi conflict. One official said things were decided or at least deeply discussed, and Axios said that with negotiations stalled Trump is considering resuming major combat operations; no decision was announced."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "Donald Trump, remarks at a Peterbilt Motors plant in Denton, Texas (via Al Jazeera)",
+     "url": "https://www.aljazeera.com/news/2026/10/2/new-aircraft-carrier-10000-us-troops-is-the-iran-war-about-to-escalate",
+     "text": "Speaking late on 1 October at a truck plant in Denton, Texas, Trump said the confrontation with Iran would end very soon and that Iran would either do something proper and smart or would not be around very long. Al Jazeera's account gives no deadline and no reference to the US reply delivered via Qatar."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Reuters (Parisa Hafezi; via 933thedrive), citing three senior Iranian officials and an insider",
+     "url": "https://www.933thedrive.com/2026/10/01/iran-readies-harder-retaliation-if-attacked-as-diplomacy-faces-long-odds/",
+     "text": "Reuters reported from Dubai on 1 October that the US response delivered through Qatar on 29 September was under review in Tehran, and quoted an official saying that even if Iran does not reject it outright and indirect talks continue, an agreement is very unlikely. Iran's conditions were listed as an end to fighting, the lifting of the US blockade, the release of at least $12 billion in frozen funds and a waiver of oil sanctions. No timetable for Iran's answer was given."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "Masoud Pezeshkian, Iranian president (via Axios)",
+     "url": "https://www.axios.com/2026/10/02/iran-trump-negotiations-war-reasons-fail",
+     "text": "Pezeshkian said on 1 October that Iran has never run away from dialogue and will not, although the US had attacked Iran three times despite having signed the agreement. The remark, relayed by Axios, gave no indication of when or how Tehran would answer the US reply."
+    },
+    {
+     "date": "28 Sep-1 Oct",
+     "tier": "official",
+     "src": "Donald Trump, TIME interview (via Axios, TRT World and the Jerusalem Post)",
+     "url": "https://www.axios.com/2026/10/01/trump-time-interview-iran-democrats-ai-netanyahu",
+     "text": "In a TIME interview conducted on 28 September and published on 1 October, Trump said what Iran was offering in its rejected Hormuz truce proposal was not good enough, and said it was possible he would escalate strikes on Iran after the November midterms, declining to elaborate. Axios separately quoted him from the interview doubting there could ever be peace with Iran."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -7353,7 +7650,7 @@ const DATA = {
      "url": "https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 4,
@@ -7362,10 +7659,58 @@ const DATA = {
     "Maritime"
    ],
    "status": "breach",
-   "statusNote": "Still Breached, checked, no change. No CENTCOM redirected-vessel count newer than 122 (as of 25 September) surfaced, and no lift, easing, boarding, seizure or drawdown was reported for 29 September-1 October. USNI's 28 September tracker still places the George Washington and George H.W. Bush carrier groups, the Boxer group with the 11th MEU and seven destroyers in the Arabian Sea. UNVERIFIED - USNI says a defense official confirmed USS Theodore Roosevelt began its planned deployment on 27 September to relieve George Washington, a rotation rather than an addition (USNI only). UNVERIFIED - the WSJ estimated that Iranian crude afloat outside the blockade line fell from 29 million barrels in early September to about 15 million and could run out by mid-October. The mediated track offers no near-term lift: Iran confirmed on 30 September that it had received the US reply to its seven-day plan, which pairs a Hormuz reopening with an end to the blockade, but the contents are undisclosed and the dispute is reportedly over sequencing (Article 3). No Iran war-powers vote has been held since the Senate's 24 September defeat. On the separate anti-ISIS track, the coalition mission in Iraq ended on 30 September with the Pentagon citing a shift to bilateral cooperation; whether a residual US force stays remains CONTESTED. Article 4 stays Breached.",
+   "statusNote": "Still Breached. CENTCOM said that its forces had redirected 125 commercial vessels as of 30 September, up from 122 on 25 September (10 in the prior week, per Bloomberg), and no lift, easing, exemption or drawdown was reported for 1-4 October; nor was any boarding, seizure or disabling fire, and Maritime Executive observed that the US has ceased publicised counterattacks on the Iran-linked merchant fleet. Treasury's 1 October sanctions release said Iran's oil revenues are falling to zero as the blockade takes hold, and Bloomberg's tanker tracking found no Iranian crude loadings in September, the first such month of the war. The WSJ's figure of about 15 million barrels afloat outside the blockade line, previously single-sourced, is now matched by Treasury Secretary Bessent (27 September) and Kpler's Homayoun Falakshahi (Article 10), and Maritime Executive says most of Iran's Far East storage has been drawn down. CONTESTED - US naval posture is growing or rotating: the WSJ, a US official speaking to Al Jazeera and Maritime Executive say USS Theodore Roosevelt (sailed 27 September) and the Makin Island amphibious group with the 13th MEU (28 September) add 9,000-10,000 personnel and leave three carriers and two amphibious groups around Iran by late November, while The National, CTP-ISW and USNI describe reliefs for George Washington and the amphibious group in theatre; Roosevelt's deployment is no longer USNI-only. USNI's 28 September tracker (George Washington and George H.W. Bush groups, the Boxer group with the 11th MEU, seven destroyers in the Arabian Sea) remains the latest. No Iran war-powers roll call has been held since the Senate's 24 September vote, and the House has not voted since 16 September. The mediated track offers no near-term lift: Ghalibaf was reported (UNVERIFIED, one relay) as saying on 4 October that Hormuz stays shut until Iran's seven conditions are met (Article 5), Iran's plan still pairs reopening with an end to the blockade, and the contents of the US reply remain undisclosed (Article 3). On the separate anti-ISIS track, CENTCOM's Adm. Cooper confirmed the Erbil exit on 30 September, with the task force now in Jordan; whether a residual US force stays in Iraq remains CONTESTED. Article 4 stays Breached.",
    "deadline": "Full lift was due ~17 Jul 2026 — lapsed unmet; withdrawal post-deal",
    "summary": "The US naval blockade is to be lifted immediately on signing and removed in full within 30 days, by about 17 Jul 2026. Withdrawal of US forces from Iran's proximity runs 30 days after the final deal rather than this MOU, so that clock only starts once a deal is signed. Interdictions, boardings and vessel redirections are the test of the blockade limb.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against the Senate roll-call list and vote page 254, House Clerk roll-call pages 308-317 (the evs index served a stale April listing), USNI News (newest fleet tracker still 28 Sep), CTP-ISW Iran Updates of 1-3 Oct (4 Oct not yet posted, 404), Treasury release sb0643, TASS, Maritime Executive, gCaptain, Al Jazeera, The National, Yeni Safak, A News, Iran International, Shafaq News and Windward, plus searches for CENTCOM blockade counts, boardings and disabling fire, the Theodore Roosevelt and Makin Island deployments, Hegseth statements, war-powers votes, the Iraq residual force and Iranian crude afloat; a CENTCOM release and a relay of a 125-vessel count surfaced by search proved to date from June (first blockade phase) and were not used. New: CENTCOM's count of 125 redirected vessels as of 30 Sep (10 in the prior week); the Makin Island amphibious group and 13th MEU sailing after Theodore Roosevelt, 9,000-10,000 personnel in all, with rotation versus addition contested; Treasury's statement that Iran's oil revenues are falling to zero under the blockade; zero Iranian crude loadings in September; Adm. Cooper's confirmation of the Erbil exit. No boarding, seizure or disabling fire (Maritime Executive notes the US has ceased publicised counterattacks on the Iran-linked merchant fleet), no lift, easing or exemption, no new war-powers roll call (Senate to Vote 256 on 30 Sep, House to Roll 314 on 16 Sep); the WSJ's 15 million-barrel afloat estimate is now matched by Bessent (27 Sep) and Kpler's Falakshahi (Article 10). Article 4 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "US Senate roll-call vote list and vote page 254 (senate.gov); House Clerk roll-call pages 308-317 (clerk.house.gov)",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.htm",
+     "text": "Read directly on 5 October: the Senate's newest roll calls, Votes 253-256 on 30 September, were failed cloture votes on taking up H.R. 7008 (stock-trading restrictions) and H.R. 9340 (utility cost recovery for large-load customers, 57-43) and the cloture and confirmation votes on Keith Sonderling as Secretary of Labor; none concerned Iran, so Vote 244 on 24 September remains the latest Iran vote. The House's last roll call is Roll 314 on 16 September (S. 2403), with no Roll 315 or later found, so Roll 307 on 15 September remains the latest House Iran war-powers vote."
+    },
+    {
+     "date": "1-3 Oct",
+     "tier": "press",
+     "src": "Bloomberg tanker tracking (via Shafaq News, 1 Oct); Maritime Executive (2 and 3 Oct); Windward daily page (read 5 Oct)",
+     "url": "https://shafaq.com/en/Middle-East/Iran-crude-loadings-fall-to-zero-in-September",
+     "text": "Bloomberg reported that Iran loaded no crude onto tankers in September, the first such month since the war began on 28 February, against about 250,000 bpd in August, and that it was supplying some Chinese buyers only from floating storage near Singapore; Windward's daily page carries the same finding. Maritime Executive said that, with the blockade stopping Iranian tankers leaving the Gulf, Iran had for 10 weeks been selling from stocks held afloat off Malaysia and China, most of which have now been drawn down. The WSJ's estimate of about 15 million barrels afloat outside the blockade line, possibly exhausted by mid-October, logged on 28 September from one source, is now matched by Treasury Secretary Bessent, who said on 27 September that only about 15 million barrels remained out for delivery, and by Kpler's Homayoun Falakshahi (via Iran International; Article 10)."
+    },
+    {
+     "date": "1-2 Oct",
+     "tier": "press",
+     "src": "Wall Street Journal (via Yeni Safak and A News, 1 Oct); Al Jazeera (2 Oct, citing a US official); The National (1 Oct, citing a US official); Maritime Executive (2 Oct, citing US sources); CTP-ISW Iran Update, 2 Oct (citing The Hill and Army Recognition)",
+     "url": "https://www.aljazeera.com/news/2026/10/2/us-to-send-third-aircraft-carrier-towards-iran-us-official-to-al-jazeera",
+     "text": "CONTESTED: The Wall Street Journal reported that the Makin Island amphibious ready group with the 13th MEU sailed on 28 September, a day after USS Theodore Roosevelt left San Diego, together adding 9,000 to 10,000 sailors and Marines by late November (a total only the WSJ gives; Article 9), and a US official told Al Jazeera that three carriers and two amphibious groups would then be positioned around Iran; Maritime Executive's US sources likewise spoke of a third carrier group. The National, citing a US official on the deployment, instead describes Roosevelt as relieving George Washington, CTP-ISW, citing The Hill, says both Roosevelt and the new amphibious group replace units already in the region, and the WSJ said George Washington could return to Japan, leaving two carriers. Roosevelt's departure no longer rests on USNI alone; whether US naval posture grows or only rotates is unresolved."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "US Treasury press release sb0643 ('Operation Economic Outcast'), 1 Oct",
+     "url": "https://home.treasury.gov/news/press-releases/sb0643",
+     "text": "Announcing automotive- and rail-sector designations on 1 October (logged under the sanctions articles), Treasury said Iran's oil revenues were falling to zero as the US military's maritime blockade takes hold, and that Tehran had turned to its rail network, including to move oil, to cope with the blockade. The release signals continued use of the blockade as a pressure tool, with no lift or easing."
+    },
+    {
+     "date": "30 Sep",
+     "tier": "official",
+     "src": "US Central Command (post on X, via TASS); Bloomberg (via Shafaq News, 1 Oct); Maritime Executive (2 Oct)",
+     "url": "https://tass.com/world/2195345",
+     "text": "CENTCOM said that as of 30 September its forces had redirected 125 commercial vessels since the blockade resumed in mid-July, three more than the 122 reported for 25 September; Bloomberg said 10 were redirected in the preceding week, and Maritime Executive carried the same total. No updated disabled or boarded count was given."
+    },
+    {
+     "date": "30 Sep",
+     "tier": "official",
+     "src": "Adm. Brad Cooper, CENTCOM commander (via Shafaq News); CNN (via CTP-ISW Iran Update, 1 Oct)",
+     "url": "https://shafaq.com/en/Kurdistan/US-leaves-Erbil-ending-anti-ISIS-mission-in-Iraq",
+     "text": "CONTESTED (anti-ISIS track, not the MOU): Shafaq News reported on 30 September that CENTCOM commander Adm. Brad Cooper confirmed US forces had completed their withdrawal from Erbil, with the counter-ISIS task force now headquartered in Jordan and the move framed as a transition to a bilateral defence relationship; CTP-ISW's 1 October update, citing CNN, said the US fully withdrew its forces from Iraq on 30 September. Neither gives numbers for any remaining personnel, so the Soufan Center's view that a small residual force stays is not settled either way."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -9175,7 +9520,7 @@ const DATA = {
      "tier": "analysis"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 5,
@@ -9185,10 +9530,111 @@ const DATA = {
     "Oil & Energy"
    ],
    "status": "breach",
-   "statusNote": "Still Breached on all three limbs: no reopening, demining or toll suspension. Windward counted 17 Hormuz transits on 29 September (7 dark) and revised 28 September down to 16, against roughly 130 a day before the war; its blacklist was last given as 81 ships. Attacks on shipping continued: Windward and Maritime Executive, citing UKMTO, report three tankers struck by unknown projectiles on 29 September, Maritime Executive alone naming the ADNOC-operated VLCC Mersin Prosperity and the tanker Sinbad. Windward also identifies the ship hit on the evening of 28 September as the Kuwaiti VLCC Al Funtas, corroborating Maritime Executive, and CTP-ISW cites UKMTO on that strike. UNVERIFIED - Fars reported warning shots on 29 September, and the IRGC spokesman repeated that ships moving without Iranian permission risk being targeted or mined (Article 1). CONTESTED (figures): Kpler-based reports put September Middle East crude exports above 16 million bpd, only about 9.7 million of it through Hormuz, while the WSJ put exports near 13 million. CTP-ISW notes Iran's seven-day plan would reopen the strait only on day six, whereas the memorandum has commercial traffic start immediately on signing. Brent's December contract, now the front month, settled at $98.03 on 30 September, up 1.9%. MARAD advisory 2026-011 stays in force, and no Iran-Oman arrangement has been agreed. Article 5 stays Breached.",
+   "statusNote": "Still Breached on all three limbs: no reopening, demining or toll suspension. Windward counted 10 Hormuz transits on 3 October (1 dark), with 1,012 vessels inside the Gulf, against roughly 130 a day before the war; its daily counts for 30 September-2 October could not be retrieved. Lloyd's List Intelligence's 30 September brief revised 14-20 September up to 117 non-Iranian-linked transits and counted at least 379 in September, the most active month of the war outside June's memorandum period. Reopening stays conditional: UNVERIFIED - Al Jazeera, citing Nournews, reported parliament speaker and chief negotiator Ghalibaf as saying on 4 October that the strait will not open until Iran's seven conditions based on the Islamabad memorandum are met, restating his 20 September line; foreign ministry spokesman Baghaei said reopening is Iran's main goal while Washington focuses on nuclear talks; and CTP-ISW's earlier point stands that Iran's seven-day plan reopens the strait only on day six. Strikes on ships in the strait continued (Article 1): the Kuwaiti VLCC Kazimah III on 1 October and a Panama-flagged crude tanker off Oman on 2 October (CTP-ISW counts a second tanker that day); UNVERIFIED - the new LR2 Lipsi on 3-4 October (Maritime Executive only). Windward names Al Ruwais as the third ship hit on 29 September and says all five ships struck from 28 September to 1 October were transiting dark, though its incident tally still reads 81. UNVERIFIED - Maritime Executive says the PGSA told Iranian media the targeted ships included vessels on its non-compliant list, now 82 (LLI and earlier logs: 81). UNVERIFIED - Fars's 29 September warning-shot report and the IRGC's permission threats have no new corroboration (Article 1). UNVERIFIED - Maritime Executive reports that Oman's Maritime Security Centre now requires foreign-flagged ships transiting or anchoring in Omani territorial waters to obtain a navigation licence three days ahead; this is an Omani rule under a February regulation, and there is still no Iran-Oman arrangement. CONTESTED (figures): Kpler shows about 9.7 million bpd of September Hormuz crude flows, Maritime Executive says tanker traffic rebounded above 12 million bpd and JPMorgan puts Gulf flows at 17.5 million bpd. MARAD 2026-011 stays in force, the JMIC threat level remains severe and no new war-risk premium data surfaced. G7 leaders called on 2 October for the immediate and full restoration of navigational rights in the strait and agreed a coordinated 100 million-barrel stock release. Brent's December contract settled at $102.31 on 1 October, up 4.4% on China's fuel-export halt and stalled diplomacy, and at $102.25 on 2 October after recovering from a dip below $99 on the G7 release. Article 5 stays Breached.",
    "deadline": "Pre-war volume was due ~17 Jul — lapsed; toll-free window ended ~16 Aug — expired unused",
    "summary": "Iran is to restore Strait of Hormuz traffic to pre-war volume within 30 days, by about 17 Jul 2026, demining as it goes, with passage toll-free for 60 days, to about 16 Aug 2026. Any closure, transit fee or charge, mandatory coordination requirement, or refusal of demining assistance counts against the article.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Windward's daily page (a cache-busted read showing 3 Oct data; its 30 Sep-2 Oct daily counts could not be retrieved, the Wayback Machine was blocked and Hellenic Shipping News republication URLs returned 404) and blog, Lloyd's List Intelligence's 30 Sep brief, Maritime Executive, gCaptain, Splash247, Bloomberg via Insurance Journal and gCaptain, Al Jazeera (articles and the 2-4 Oct live blogs via AMP), CTP-ISW Iran Updates of 1-3 Oct, MARAD's advisory page, Trading Economics and EnergyNow; UKMTO's incident and JMIC advisory pages rendered empty, and Mehr, Tasnim, GlobalSecurity, Marine Insight's index and the Times of Israel live-blog index served stale or blocked pages. Searches covered the PGSA list, IRGC rules, Iran-Oman talks, Oman's transit rules, war-risk premiums, demining, Kpler/Vortexa export data and oil-price drivers. New: 10 transits on 3 Oct (1 dark); strikes on Kazimah III (1 Oct) and at least one tanker on 2 Oct, plus Lipsi on 3-4 Oct (unverified); Al Ruwais named as the third 29 Sep ship; Ghalibaf's reported 4 Oct restatement that the strait stays shut until Iran's seven conditions are met (unverified); Oman's navigation-licence requirement for its territorial waters (unverified as to the 4 Oct tightening); the PGSA list at 82 (unverified); LLI's September tally; contested flow measures; the G7 leaders' 2 Oct call for navigation rights in the strait to be restored, with a 100 million-barrel stock release; Brent's December contract settling at $102.31 on 1 Oct and $102.25 on 2 Oct (FMP). No reopening, demining, toll suspension, Iran-Oman arrangement, new MARAD advisory or new war-risk premium data. Article 5 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Windward Hormuz daily intelligence page (direct read)",
+     "url": "https://insights.windward.ai/",
+     "text": "Read directly on 5 October: Windward's page (dated 4 October, data to 3 October) counted 10 Hormuz transits on 3 October, 5 inbound (4 northern, 1 southern, none dark) and 5 outbound (1 northern, 4 southern, 1 dark), with 1,012 vessels inside the Gulf and 131 jammed, 61% above the 7-day average. It listed five merchant vessels struck from 28 September to 1 October, all transiting dark, yet its incident tally still read 81 (74 attacks, 7 near misses). Outbound crude was 12.4 million barrels on 1 October against 13.1 million on 30 September, with ship-to-ship transfers up from 2.02 million to 4.82 million and terminal loadings down from 11.1 million to 7.58 million, under a 'US blockade active' banner."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "MARAD maritime security advisories page (direct read); JMIC (via gCaptain, 1 Oct)",
+     "url": "https://www.maritime.dot.gov/msci-advisories",
+     "text": "Read directly on 5 October: MARAD advisory 2026-011 (Iranian attacks on commercial vessels in the Persian Gulf, Strait of Hormuz and Gulf of Oman) remains in force from 9 September 2026 to 8 March 2027, and no advisory has been issued or revised since 2026-012 and 2026-013 of 23 September. gCaptain reported on 1 October that the JMIC was keeping the regional threat level at severe, judging deliberate attacks on commercial shipping highly likely."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Mohammad Bagher Ghalibaf, Iranian parliament speaker and chief negotiator (via Nournews, as reported by Al Jazeera); Esmaeil Baghaei, foreign ministry spokesman (Al Jazeera)",
+     "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
+     "text": "UNVERIFIED - Al Jazeera, citing Nournews, reported Ghalibaf as saying on 4 October that the Strait of Hormuz will not open until Iran's seven conditions, which he based on the Islamabad memorandum, are met, restating his 20 September position; no second outlet carrying the 4 October remark was found. In the same report, foreign ministry spokesman Baghaei said Washington was focused on nuclear talks whereas reopening the strait has been Iran's main goal. Reopening thus stays conditional, whereas the article required commercial traffic to resume on signing.",
+     "thin": true
+    },
+    {
+     "date": "4 Oct",
+     "tier": "official",
+     "src": "Oman Maritime Security Centre (via Maritime Executive, 4 Oct); Bait Al Qanoon (via Mondaq, 27 Feb) on the underlying regulation",
+     "url": "https://maritime-executive.com/article/oman-s-maritime-security-center-in-muscat",
+     "text": "UNVERIFIED - Maritime Executive reported on 4 October that Oman's Maritime Security Centre had tightened transit rules: foreign-flagged vessels transiting or anchoring in Omani territorial waters must apply through a shipping agent for a navigation licence at least three days ahead, hold valid flag registration and P&I insurance and keep AIS on, while warships and ships bound for Omani ports are exempt. The licence regime itself dates from regulation No. 30/2026 of early February (Mondaq), and Maritime Executive linked the tightening to IRGC boats operating in Omani waters and dark-fleet tankers with fraudulent flags; no Omani notice dated October was found. It is an Omani requirement on the southern route, not an Iran-Oman arrangement or an Iranian toll.",
+     "thin": true
+    },
+    {
+     "date": "3-4 Oct",
+     "tier": "press",
+     "src": "Maritime Executive (4 Oct, citing Vanguard Tech); IRIB (via Al Jazeera live blog, 3 Oct)",
+     "url": "https://maritime-executive.com/article/iran-keeps-up-pace-of-strikes-with-attack-on-brand-new-lr2-tanker",
+     "text": "UNVERIFIED - Maritime Executive reported on 4 October that another tanker had been struck in the strait, which Vanguard Tech identified as the new LR2 Lipsi (Greek operator, Chinese owner), with engine-room damage; Iran's state broadcaster IRIB had reported an oil tanker exploding in the strait on the evening of 3 October (via Al Jazeera). No UKMTO notice or second outlet naming the ship was found, and it is unclear whether the two reports describe the same vessel (Article 1).",
+     "thin": true
+    },
+    {
+     "date": "1-4 Oct",
+     "tier": "press",
+     "src": "Maritime Executive (4 Oct); Bloomberg (via Insurance Journal, 2 Oct, citing JPMorgan); Splash247 (2 Oct, citing Kpler); Lloyd's List (via gCaptain, 1 Oct)",
+     "url": "https://splash247.com/fresh-attacks-hit-hormuz-tanker-and-saudi-oil-gateway/",
+     "text": "CONTESTED (figures): measures of recovering Gulf flows still diverge. Maritime Executive said tanker traffic through the strait had rebounded to more than 12 million bpd, and Bloomberg cited a JPMorgan estimate of 17.5 million bpd of daily flows through the Gulf (scope not specified), against the roughly 9.7 million bpd of September Hormuz crude flows Kpler shows, which Splash247 says compares with 2.2 million in late July, with Saudi exports near 5.4 million bpd. Lloyd's List's editor said September was on track to be the busiest month for Gulf exports since the conflict began."
+    },
+    {
+     "date": "1-4 Oct",
+     "tier": "press",
+     "src": "Bloomberg (via gCaptain, 1 and 4 Oct, citing tanker tracking and Vortexa); Al Jazeera live blog (3 Oct)",
+     "url": "https://gcaptain.com/iraq-shifts-oil-strategy-by-arranging-tanker-to-move-past-hormuz/",
+     "text": "Bloomberg reported that Iraq's state tanker company had, for the first time in decades, arranged its own VLCC to carry 2 million barrels past Hormuz so that refiners wary of the strait need not collect at Basra; Iraq's exports were 2.6 million bpd in September to the 21st, against 2 million in August and 3.3-3.5 million before the war. Congestion off Oman and the UAE has also pushed some ship-to-ship transfers of Gulf crude to India's Gulf of Kutch, the first eastbound transfers seen there since the war began (Bloomberg, Vortexa)."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "official",
+     "src": "Persian Gulf Strait Authority (via Maritime Executive, 2 Oct)",
+     "url": "https://maritime-executive.com/article/two-more-tankers-in-hormuz-report-strikes-bringing-total-to-six-in-a-week",
+     "text": "UNVERIFIED - Maritime Executive reported that Iran's Persian Gulf Strait Authority told Iranian media the ships being targeted included vessels on its non-compliant list, which it put at 82 as of 2 October, one more than the 81 logged since 28 September. No PGSA post or Iranian outlet carrying the statement or the new figure was found.",
+     "thin": true
+    },
+    {
+     "date": "1-2 Oct",
+     "tier": "press",
+     "src": "Al Jazeera live blog (2 Oct); Maritime Executive (2 and 4 Oct, citing UKMTO, Fars and Ambrey); Windward daily page; gCaptain (1 Oct, UKMTO Warning 147-26); CTP-ISW Iran Update, 3 Oct (citing UKMTO)",
+     "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/2/iran-war-live-us-moves-2000-marines-to-middle-east-tanker-hit-in-hormuz",
+     "text": "Strikes on ships using the strait continued (logged mainly under Article 1). The Kuwait Oil Tanker Co. VLCC Kazimah III (317,250 dwt) was hit by a projectile about 5 miles off Oman at about 17:50 UTC on 1 October and caught fire, its crew evacuated to Oman, the second KOTC supertanker struck in four days (Windward; Maritime Executive; UKMTO Warning 147-26 via gCaptain; Al Jazeera). On 2 October a crude tanker, Panama-flagged according to Ambrey, was struck about 5.3 nautical miles off Oman, its fire put out but power lost, and CTP-ISW, citing UKMTO, counts a second, outbound tanker hit that day. Maritime Executive put the toll at six ships in a week and, citing UKMTO, 110 conflict-related incidents in all."
+    },
+    {
+     "date": "1-2 Oct",
+     "tier": "press",
+     "src": "FMP market data (BZUSD, December contract); EnergyNow (1 Oct); Trading Economics (Brent and WTI pages, read 5 Oct); Al Jazeera live blog (3 Oct)",
+     "url": "https://energynow.ca/2026/10/oil-jumps-about-2-as-china-halts-fuel-exports-tightening-an-already-strained-global-market/",
+     "text": "Brent's December contract settled at $102.31 on 1 October, up $4.28 (4.4%) from $98.03, as China halted most October fuel exports and US-Iran diplomacy stalled (FMP daily data; EnergyNow). On 2 October it fell as low as $98.43 after G7 leaders agreed to release 100 million barrels, then recovered to settle at $102.25, down $0.06 (FMP; Al Jazeera); Trading Economics put WTI's low that day at a one-month $88.06. Brent traded near $101.4 on the morning of 5 October SGT, and WTI near $90.2."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "official",
+     "src": "G7 leaders' statement on global energy security and market stability (Council of the EU)",
+     "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/02/g7-leaders-statement-on-global-energy-security-and-market-stability/",
+     "text": "G7 leaders condemned Iran's continued attacks on its regional neighbours and its disruption of trade and energy security, and called for the immediate and full restoration of navigational rights in the Strait of Hormuz. They committed to a coordinated release of 100 million barrels of oil stocks over four months through the IEA, with a front-loaded diesel release in the first 20 days."
+    },
+    {
+     "date": "30 Sep",
+     "tier": "analysis",
+     "src": "Lloyd's List Intelligence, Strait of Hormuz Brief (30 Sep)",
+     "url": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-30-september-2026",
+     "text": "Posted after the last refresh's check: LLI revised its count for 14-20 September to 117 non-Iranian-linked transits (62 eastbound, 55 westbound; 95 tankers and gas carriers), up from the preliminary 104, against 106 for 7-13 September. It said non-Iranian-linked ships had made at least 379 Hormuz voyages in September, the most active month of the war outside June's memorandum period (469 transits), and it recorded Iran's blacklist rising from 77 to 81 ships and over 90 attacks on commercial ships since the war began."
+    },
+    {
+     "date": "29 Sep",
+     "tier": "analysis",
+     "src": "Windward daily page (read 5 Oct); Maritime Executive (2 Oct)",
+     "url": "https://maritime-executive.com/article/two-more-tankers-in-hormuz-report-strikes-bringing-total-to-six-in-a-week",
+     "text": "Windward names the third vessel struck in the strait on 29 September as Al Ruwais (IMO 9828405, Liberia-flagged), which Maritime Executive had described only as a tanker, possibly an LNG carrier, and Maritime Executive's 2 October report also lists Al Ruwais among the week's victims. Windward gives IMO numbers for the other two, Mersin Prosperity (9327554, hit on the port side) and Sinbad (9413688, inbound), and says all three were transiting dark."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -11820,7 +12266,7 @@ const DATA = {
      "url": "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 6,
@@ -11829,10 +12275,23 @@ const DATA = {
     "Reconstruction"
    ],
    "status": "breach",
-   "statusNote": "Still Breached, checked, no change. The DFC newsroom, read directly on 1 October, still shows 25 September as its newest release, and none of its September releases mentions the Middle East, Iran, reconstruction or the proposed $5 billion DFC-seeded Gulf energy vehicle. Treasury's newest releases (29-30 September) say nothing on a reconstruction vehicle, and OFAC and the 30 September Federal Register show only tightening steps on Iran: conventional-arms designations added on 29 September and a rule writing the 2020 sectoral sanctions order (E.O. 13902) into the Iran regulations, effective 30 September, rather than the sanctions relief the fund was meant to rest on. The mediated talks still do not reach reconstruction: Iran confirmed on 30 September that it had received the US reply to its seven-day plan, but its contents were not disclosed and nothing links it to the $300 billion fund (Article 3). A 30 September Iran International item on Abu Dhabi's plans for ports outside Hormuz refers to an Emirati sovereign fund, not the memorandum's fund. No Gulf pledge, contributor, fund structure or governance step has been reported. Article 6 stays Breached.",
+   "statusNote": "Still Breached, checked, no change. The DFC newsroom, read directly on 5 October, shows one new release (2 October), on investments by the US-Ukraine Reconstruction Investment Fund, and nothing on the Middle East, Iran or the proposed $5 billion DFC-seeded Gulf energy vehicle (the Partnership for Allied Trust and Construction), which in any case excludes Iran. US policy moved the other way: on 1 October Treasury designated 30 more Iran-related targets in the automotive, rail and metals sectors, issued an E.O. 13902 determination covering the automotive and rail sectors and designated the A7 shadow-banking network it says Iran uses, so the sanctions relief the fund was meant to rest on is receding (Articles 7 and 9). The White House issued no Iran action, the G7's 2 October energy-security statement said nothing about reconstruction finance, and searches found no Gulf pledge, contributor, fund structure or governance step. Iran's answer to the US reply is still pending and nothing links the mediated exchange to the $300 billion fund (Article 3). Article 6 stays Breached.",
    "deadline": "Lapsed — mechanism was due with the final deal by 16 Aug 2026",
    "summary": "The US is to work with regional partners on a reconstruction plan for Iran of at least $300B, enabled by sanctions relief rather than direct US appropriation, with the mechanism to be settled inside the 60-day window. The test is whether identifiable financing commitments and an actual fund structure exist.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against the DFC newsroom (direct read; one new release, 2 Oct, on the US-Ukraine Reconstruction Investment Fund), Treasury press releases sb0641-sb0649 (sb0648 is the same Ukraine fund; the Iran items sb0643-sb0645 are sanctions actions and an Iraq readout), OFAC Recent Actions with its 1 and 2 Oct detail pages, the White House presidential-actions page (no Iran action), the 2 Oct G7 leaders' statement on energy security (no reconstruction finance), and searched for new coverage of the $300 billion fund and the DFC-seeded Gulf vehicle (only June signing-era and 22-24 September proposal coverage returned). New: nothing on the fund; the only US Iran steps were further sanctions (1 Oct automotive, rail and metals designations, sectoral determinations and the A7 network action). No Gulf pledge, contributor, fund structure or governance step. Article 6 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "DFC newsroom (direct read)",
+     "url": "https://www.dfc.gov/media/press-releases",
+     "text": "Read directly on 5 October: the only DFC release since 25 September is a 2 October note on new energy and critical-minerals investments approved by the US-Ukraine Reconstruction Investment Fund (URIF), and no release mentions the Middle East, Iran, Gulf reconstruction or the proposed $5 billion Gulf energy vehicle."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -12811,7 +13270,7 @@ const DATA = {
      "url": "https://www.steptoe.com/en/news-publications/international-compliance-blog/weekly-sanctions-update-june-22-2026.html"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 7,
@@ -12820,10 +13279,65 @@ const DATA = {
     "Sanctions"
    ],
    "status": "breach",
-   "statusNote": "Still Breached, and the US sanctions perimeter widened again. OFAC's 29 September detail page, readable on 1 October after a 403 the day before, shows that besides Treasury's 10 procurement targets (sb0637), three existing listings - Iran's Saha Airlines and Russia's Yakovlev design bureau and MG-Flot - were updated with the Iran conventional-arms tag (E.O. 13949), which Iran International described as a State Department action over Yak-130 deliveries and missile shipments to Russia. A final rule effective 30 September also wrote the 2020 sectoral sanctions order (E.O. 13902) into the Iranian Transactions and Sanctions Regulations. OFAC's only 30 September entry has no Iran element; no Iran delisting, licence or waiver appears, and no UN step has followed the 27 September lapse of the 1737 Panel of Experts. On aviation, Iraq's prime minister's office asked Washington on 26 September for a humanitarian exemption from the Iranian-airline measures (The National), but no OFAC or State waiver has appeared; Kataib Hezbollah threatened on 28 September to topple the government and close the ports of countries enforcing the airline ban, and the Najaf-flights resumption remains UNVERIFIED and CONTESTED. Iran confirmed receipt of the US reply to its seven-day plan on 30 September, but whether it offers any sanctions relief was not disclosed (Article 3). Article 7 stays Breached.",
+   "statusNote": "Still Breached, and the US sanctions perimeter widened again. On 1 October OFAC added 30 Iran-related names to the SDN list - 22 under E.O. 13902, including carmakers Iran Khodro and SAIPA (over 90% of Iran's car market, per Reuters), the national railway and Raja passenger-train companies, heavy-equipment maker HEPCO and foreign suppliers, and eight under the metals order E.O. 13871 - published a determination opening the automotive and rail sectors to sanctions, amended FAQ 831 and designated the A7 shadow-banking network Treasury says Iran uses; FinCEN's proposed rule against A7's sub-agents was published on 5 October. Treasury framed the step as draining Iranian revenue as oil income falls to zero and mentioned no relief. OFAC's only other new entry (2 October, Hamas) has no Iran element, and nothing is dated 3-4 October. On aviation the picture is CONTESTED: Rudaw, quoting an OFAC licence, reported a narrow authorisation on 29 September for Iraqi Airways' Najaf-Iran pilgrim flights until 28 October, while Iraq's prime minister's office said on 2 October that Iranian airlines other than Mahan Air may run up to 40 daily Najaf flights; OFAC has published nothing, and the 1 October Bessent-Fuad Hussein readout records only that Najaf pilgrimages were discussed. Even if confirmed, it is a time-limited carve-out, not termination. No UN step followed the 27 September lapse of the 1737 Panel of Experts (Security Council Report's October forecast lists no Iran item), and no EU, UK, Canadian or Australian Iran delisting or relief was found; OFSI's 23 September guidance tightens UK licensing for designated Iranian banks (Article 11). Iran's answer to the US reply is still pending, and whether that reply offers any sanctions relief remains undisclosed (Article 3). Article 7 stays Breached.",
    "deadline": "Schedule TBD in final deal (~16 Aug 2026)",
    "summary": "The US commits to terminating all sanctions categories — UN, US primary and US secondary — on a schedule to be set in the final deal. The temporary 60-day oil waiver under Article 10 is a separate instrument and does not satisfy this article; new designations count against it.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against OFAC Recent Actions, its 1 and 2 Oct detail pages and OFAC's Iran programme page (direct reads; nothing dated 3-4 Oct), Treasury press releases sb0641-sb0649, the Federal Register (FinCEN's A7 proposed rule 2026-20371, published 5 Oct; the 1 Oct E.O. 13902 determination not yet published), the White House presidential-actions page, the EU Council's press page and Iran sanctions timeline (newest entry 24 Jul), gov.uk news and OFSI guidance, Canada's and Australia's Iran sanctions pages, Security Council Report's October forecast and programme-of-work note, Al Jazeera, Rudaw, Kurdistan24, Alhurra, TRT World, Shafaq and Iran International; state.gov (403 in earlier runs) was not retried, no State Department Iran designation was found via relays, and gov.uk's Iran notices page is stale (last updated 13 Jul). New: 30 Iran-related designations and an automotive and rail sectoral determination (1 Oct), the A7 network designation with a FinCEN proposed rule, an amended FAQ 831, a Bessent-Fuad Hussein readout naming Najaf pilgrimages, and a contested account of a narrow Najaf flight exemption. No Iran delisting, published licence or waiver, no UN step and no new EU, UK, Canadian or Australian Iran listing or relief found. Article 7 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "OFAC Recent Actions (direct read)",
+     "url": "https://ofac.treasury.gov/recent-actions",
+     "text": "Read directly on 5 October: the newest entries are a 1 October Iran action (Iran-related designations and designation updates, a transnational criminal organisation designation, an Iran-related determination and an amended Iran FAQ) and a 2 October counter-terrorism action against a Hamas financing network in France and Gaza with no Iran element; nothing is dated 3 or 4 October. No Iran delisting, general licence or waiver appears."
+    },
+    {
+     "date": "29 Sep-2 Oct",
+     "tier": "press",
+     "src": "Al Jazeera (citing Iraqi PM al-Zaidi's office and FM Fuad Hussein, 2 Oct); Rudaw (citing an OFAC licence, 29 Sep); Iraq's transport ministry (via TRT World, 29 Sep); Alhurra (28 Sep); first logged 5 Oct",
+     "url": "https://www.aljazeera.com/news/2026/10/2/iraq-grants-iranian-airlines-40-daily-najaf-flights-after-us-exemption",
+     "text": "CONTESTED: Iraqi Prime Minister Ali al-Zaidi's office said on 2 October that, after a positive US response, Iranian airlines other than Mahan Air may run up to 40 daily flights to and from Najaf only, and Foreign Minister Fuad Hussein said the flights' return supports the Iraqi-US partnership; Al Jazeera said it had not verified the exemption with Washington. Rudaw had reported on 29 September, quoting an OFAC licence under the Iranian Transactions and Sanctions Regulations, a narrower authorisation for Iraqi Airways alone, valid until 28 October, for flights that depart from and return to Najaf and carry only Iranian pilgrims, revocable if Iraq does not keep restricting Iranian flights in its airspace; Iraq's transport ministry said the same day it had secured a special exemption for Iraqi Airways. OFAC has published no such licence and Treasury declined to comment on licensing decisions (Alhurra), but the earlier single-source Reuters report of a one-month waiver is now matched by several Iraqi accounts."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "OFAC Recent Actions, 1 Oct detail page (direct read 5 Oct); OFAC FAQ 831 (updated 1 Oct)",
+     "url": "https://ofac.treasury.gov/recent-actions/20261001",
+     "text": "OFAC's 1 October action added 30 Iran-related names to the SDN list: 22 entities under E.O. 13902 (carmakers Iran Khodro, Iran Khodro Diesel, SAIPA, Pars Khodro and Zamyad, the national railway, Raja passenger-train and rail-transport companies, heavy-equipment maker HEPCO and suppliers in China, Hong Kong, the UAE, Turkey and Indonesia) and two individuals and six entities under the metals order E.O. 13871, in Iran, China, Hong Kong, the UAE and Germany. It also published a determination under E.O. 13902 covering Iran's automotive and rail sectors, amended FAQ 831 on how the order's sectors are defined, and corrected two existing E.O. 13846 entries (Ever Shining Limited and Fluxus Marine). No Iran name was removed."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "US Treasury press release sb0643; Reuters (Timothy Gardner, via ThePrint)",
+     "url": "https://home.treasury.gov/news/press-releases/sb0643",
+     "text": "Treasury said the action, under Operation Economic Outcast, targets some of the last significant elements of Iran's industrial base, automotive and rail conglomerates it says the IRGC has co-opted, and that the regime has grown dependent on them as the blockade takes hold and its oil revenues fall to zero; the two new sectoral determinations expose anyone operating in those sectors to sanctions. Reuters noted that Iran Khodro and SAIPA hold over 90% of Iran's car market. Bessent said the step lays the groundwork to 'drain the regime's revenue once and for all'. The release mentions no talks, relief or frozen funds."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "US Treasury press release sb0644; FinCEN proposed rule (Federal Register 2026-20371, 5 Oct)",
+     "url": "https://home.treasury.gov/news/press-releases/sb0644",
+     "text": "Treasury designated the A7 Network, a Russia-linked shadow-banking network it says Iran uses to evade sanctions, as a significant transnational criminal organisation, while FinCEN issued an alert and proposed a rule under section 9714(a) of the Combating Russian Money Laundering Act to bar fund transfers involving the network's sub-agents. Treasury said the sub-agents gave the Central Bank of Iran, the IRGC and Iran-backed groups pathways to move funds and that one received nearly $140 million from entities involved in Iranian sanctions evasion, including Iran's shadow fleet. The proposed rule was published in the Federal Register on 5 October with comments due by 4 November; the designation carries a criminal-organisation tag rather than an Iran programme tag."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "US Treasury readout sb0645",
+     "url": "https://home.treasury.gov/news/press-releases/sb0645",
+     "text": "Treasury Secretary Bessent met Iraqi Foreign Minister Fuad Hussein on 1 October; the readout says they had a frank discussion covering Shiite pilgrimages to Najaf, US efforts against Iran through Operation Economic Outcast and Iraq's progress in demilitarising Iranian militias, and that Bessent set out US expectations for Prime Minister al-Zaidi's reforms. It does not mention any exemption, licence or waiver for flights between Iran and Najaf."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "analysis",
+     "src": "Security Council Report, October 2026 Monthly Forecast and What's In Blue programme-of-work note (both 1 Oct)",
+     "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-10/",
+     "text": "Security Council Report's October forecast and its note on Greece's programme of work, both published on 1 October, list no meeting on Iran, the 1737 sanctions committee or non-proliferation; members will follow spillover such as disruption of navigation in Hormuz and Bab al-Mandab. No UN step on the Iran sanctions regime has followed the 27 September lapse of the 1737 Panel of Experts, and nothing indicates the UN measures are being lifted."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -14450,7 +14964,7 @@ const DATA = {
      "url": "https://www.cnn.com/2026/06/21/world/live-news/iran-war-trump-israel-lebanon"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 8,
@@ -14459,10 +14973,23 @@ const DATA = {
     "Nuclear / IAEA"
    ],
    "status": "breach",
-   "statusNote": "Still Breached, checked, no change. No IAEA inspection, access agreement, down-blending step or new figure for the roughly 440 kg of 60-percent HEU emerged on 30 September-1 October, and no new Grossi, Ulyanov or E3 statement or Iranian enrichment announcement was found; the IAEA press page served a 2016 archive. Reuters reported that the seven-day plan now being exchanged via Qatar aims to restore an enhanced version of the June memorandum including concrete steps on Iran's nuclear programme, but the steps were not disclosed, Iran's government gave no detail of the US reply, and Iran's Hormuz-first framing contests the nuclear element (Article 13). Pezeshkian's Fox News remark that Tehran was willing to dilute the 60% stockpile (Iran International; Herald Corp) remains the only reference to a disposition method; it matches the memorandum's minimum method but has not been formally offered or verified, and Iran International's framing that Iran would give up the stockpile within the NPT remains single-sourced. On the Majlis NPT-withdrawal plan, no committee step or vote was reported, and the prediction of no more than 70 votes for leaving remains UNVERIFIED. TASS's single-source quote of Trump saying Iran is willing to declare it will never have a nuclear weapon remains uncorroborated. Article 8 stays Breached.",
+   "statusNote": "Still Breached, checked, no change. No IAEA inspection, access agreement, down-blending step or new figure for the roughly 440 kg of 60-percent HEU emerged on 1-5 October, and no Grossi, Board of Governors, E3 or AEOI statement or enrichment announcement was found; the IAEA's press-release and news pages served stale archives, and CTP-ISW's 1-3 October updates report nothing significant on the nuclear programme. The only new nuclear-file statement was Russia's: IAEA envoy Mikhail Ulyanov wrote on 2 October that Iran is not obliged to abandon its nuclear programme, rejecting US ambassador Mike Waltz's charge that 60-percent enrichment has no credible civilian purpose (Al Jazeera). Reuters, citing three senior Iranian officials, reported on 1 October that Tehran insists nuclear talks can begin only after its seven conditions are met while Washington wants the nuclear file included (Article 13), so no access or disposition step is on offer before then. Pezeshkian's late-September remark that Tehran was willing to dilute the 60% stockpile remains the only reference to a disposition method; it matches the memorandum's minimum method but has not been formally offered or verified, and Iran International's framing that Iran would give up the stockpile within the NPT remains UNVERIFIED. No Majlis committee step or vote on the NPT-withdrawal plan was reported, and the prediction of no more than 70 votes for leaving remains UNVERIFIED. TASS's single-source quote of Trump saying Iran is willing to declare it will never have a nuclear weapon remains uncorroborated. Article 8 stays Breached.",
    "deadline": "HEU fate TBD in final deal",
    "summary": "Iran reaffirms it will not develop or acquire nuclear weapons. The fate of its enriched stockpile is deferred to the final deal, with on-site down-blending under IAEA supervision as the minimum agreed method. The test is IAEA access and inspection, enrichment levels, and any verified disposition of highly enriched uranium.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Al Jazeera's 2-4 Oct live blogs (AMP) and 4 Oct Hormuz article, Reuters (933thedrive), Press TV, Iran International, the Times of Israel 1-4 Oct live blogs, CTP-ISW's 1-3 Oct Iran Updates (nuclear section: nothing significant to report), Iran Watch's library and the IAEA press-release and news pages (a 2016 archive and a September 2025 cache), plus searches for Grossi and the IAEA, the E3, Ulyanov and Waltz, the AEOI (Eslami, Kamalvandi), the Majlis NPT plan and the 60% stockpile; TASS search is disallowed by robots.txt. New: Ulyanov's 2 Oct rejection of Waltz's call for Iran to abandon its programme. An undated TRT World explainer citing a Grossi estimate that 'a bit more than 200 kg' of the 60% stock survived could not be dated and is not logged. No inspection, access deal, down-blending step, HEU figure, Board session, E3 statement, enrichment announcement or Majlis NPT step or vote. Article 8 stays Breached."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "press",
+     "src": "Al Jazeera live blog (Mikhail Ulyanov, Russia's envoy to the IAEA in Vienna, on X)",
+     "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/2/iran-war-live-us-moves-2000-marines-to-middle-east-tanker-hit-in-hormuz",
+     "text": "Russia's IAEA envoy Mikhail Ulyanov wrote on X on 2 October that Iran is not obliged to abandon its nuclear programme, calling it Iran's inalienable right and saying the US position rested on wrong assumptions about non-proliferation norms. He was responding to US ambassador Mike Waltz's comments that Iran had broken the rules by enriching uranium to 60 percent with no credible civilian purpose; the venue and date of Waltz's remarks were not given, and no IAEA access, inspection or down-blending step followed."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -15887,7 +16414,7 @@ const DATA = {
      "url": "https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 9,
@@ -15897,10 +16424,53 @@ const DATA = {
     "Ceasefire"
    ],
    "status": "breach",
-   "statusNote": "Still Breached on both limbs, and the US limb moved further. OFAC's 29 September detail page, readable on 1 October, shows the day's action went beyond Treasury's 10 procurement designations (sb0637): Iran's Saha Airlines and Russia's Yakovlev and MG-Flot, all already listed, were also designated under the Iran conventional-arms order (E.O. 13949), which Iran International described as a State Department step over Yak-130 deliveries and missile shipments to Russia. A final rule effective 30 September also wrote the 2020 sectoral sanctions order (E.O. 13902) into the Iranian Transactions and Sanctions Regulations, codifying existing authority rather than naming targets; OFAC's 30 September entry has no Iran element. The reported $15 million Rewards for Justice offer on three IRGC Aerospace Force officials remains UNVERIFIED: only earlier offers were found (up to $10 million each on five IRGC commanders on 25 August, and the standing IRGC-finance reward). No new US deployment was reported; USS Theodore Roosevelt's deployment reads as a rotation (Article 4). Iranian limb: no enrichment, centrifuge, site or NPT step surfaced (Article 8), and whether Tehran's plan includes nuclear steps stays CONTESTED (Article 13). The freeze continues to fail on both sides. Article 9 stays Breached.",
+   "statusNote": "Still Breached on both limbs, and the US limb moved again on sanctions and forces. On 1 October OFAC added 30 Iran-related names to the SDN list, issued a determination opening Iran's automotive and rail sectors to sanctions under E.O. 13902 and designated the A7 shadow-banking network Treasury says Iran uses, with a FinCEN proposed rule against its sub-agents published on 5 October (Article 7); it was the second Iran designation round in three days. On forces, Axios reported on 2 October (two US officials and a regional source) that one Patriot battery each had been sent to Saudi Arabia and Qatar in recent weeks to protect energy sites, and that the Makin Island Amphibious Ready Group with 13th MEU Marines sailed on 28 September, due by the end of November. CONTESTED: a US official told Al Jazeera on 2 October that Theodore Roosevelt will make three carriers around Iran by the end of November, against USNI's defense official (a rotation relieving George Washington) and Axios's official (not yet decided), so the 1 October reading of a pure rotation no longer holds without qualification (Article 4). UNVERIFIED: the WSJ figure of 9,000-10,000 additional troops, relayed by Al Jazeera and MEAWW, and the $15 million Rewards for Justice offer, for which Iran International has now named three IRGC Aerospace Force officers but no second source exists. Iranian limb: left to this run's IAEA and AEOI checks under Article 8; whether Tehran's plan includes nuclear steps stays CONTESTED (Article 13). The freeze continues to fail on both sides. Article 9 stays Breached.",
    "deadline": "In effect until final deal (~16 Aug 2026)",
    "summary": "Pending the final deal, both sides freeze the status quo: Iran holds its nuclear program where it stands, and the US adds no new sanctions and no new force deployments. Either limb moving — enrichment changes on one side, fresh designations or deployments on the other — breaches the article.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against OFAC Recent Actions and its 1 and 2 Oct detail pages, Treasury sb0643-sb0645, the Federal Register (FinCEN A7 proposed rule, 5 Oct), the White House presidential-actions page, Axios, Al Jazeera, Iran International (articles and live blog), CTP-ISW's 1-3 Oct Iran Updates (the 4 Oct update returned 404) and searches for Rewards for Justice, State Department designations and US deployments; rewardsforjustice.net and state.gov were not retried (robots-blocked and 403 in earlier runs) and The Hill returned 403. New on the US limb: 30 Iran-related designations, an automotive and rail sectoral determination and the A7 network designation (1 Oct); Patriot batteries moved to Saudi Arabia and Qatar in September and the Makin Island amphibious group sailing on 28 Sep (Axios); a US official's account that Theodore Roosevelt will be a third carrier, which is contested; a WSJ figure of 9,000-10,000 more troops (unverified). The $15m RFJ offer stays unverified, though Iran International has now named the three officers. The Iranian limb was not re-researched here; see Article 8. Article 9 stays Breached."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "press",
+     "src": "Al Jazeera (a US official, 2 Oct); Axios (a second US official, 1 Oct); USNI News (a defense official, 28 Sep)",
+     "url": "https://www.aljazeera.com/news/2026/10/2/us-to-send-third-aircraft-carrier-towards-iran-us-official-to-al-jazeera",
+     "text": "CONTESTED: A US official told Al Jazeera on 2 October that the US is deploying a third aircraft carrier to the waters around Iran: the Theodore Roosevelt strike group left San Diego on 27 September and the Makin Island amphibious group, with more than 2,000 Marines, a day later, so that three carriers and two amphibious groups will be positioned around Iran by the end of November. That conflicts with the defense official who told USNI on 28 September that Theodore Roosevelt is relieving George Washington, and with a US official who told Axios that it has not been decided whether the carrier will replace one already deployed or add to them."
+    },
+    {
+     "date": "1-2 Oct",
+     "tier": "press",
+     "src": "Wall Street Journal (via Al Jazeera's 2 Oct explainer and MEAWW, 1 Oct)",
+     "url": "https://www.aljazeera.com/news/2026/10/2/new-aircraft-carrier-10000-us-troops-is-the-iran-war-about-to-escalate",
+     "text": "UNVERIFIED - The Wall Street Journal reported, as relayed by Al Jazeera and MEAWW, that the new deployments could add 9,000-10,000 US troops to the roughly 50,000 already in the region, including 13th Marine Expeditionary Unit Marines and air-defence units, arriving by the end of November; a US official confirmed the deployments to Al Jazeera without giving a troop total. The WSJ report itself could not be read.",
+     "thin": true
+    },
+    {
+     "date": "2 Oct",
+     "tier": "press",
+     "src": "Axios (Barak Ravid, 2 Oct; two US officials and a regional source)",
+     "url": "https://www.axios.com/2026/10/02/patriot-missiles-iran-war-saudi-arabia-qatar",
+     "text": "Axios reported that in recent weeks the US sent one Patriot battery to Saudi Arabia to protect oil facilities and one to Qatar to protect gas facilities, to reassure both that their energy sites would be defended if Trump resumes combat against Iran. It added that the Makin Island Amphibious Ready Group, carrying thousands of 13th Marine Expeditionary Unit Marines on three ships, sailed on 28 September and is due in the region by the end of November, and that Theodore Roosevelt is expected by mid-November. Both are additions to US forces in the theatre while the freeze is supposed to hold."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "OFAC Recent Actions, 1 Oct detail page (direct read 5 Oct); US Treasury sb0643 and sb0644",
+     "url": "https://ofac.treasury.gov/recent-actions/20261001",
+     "text": "On 1 October OFAC added 30 Iran-related names to the SDN list (22 under E.O. 13902 tied to the automotive, rail and heavy-equipment sectors and eight under the metals order E.O. 13871), published a determination opening Iran's automotive and rail sectors to sanctions under E.O. 13902, and designated the A7 shadow-banking network Treasury says Iran uses, alongside a FinCEN proposed rule against its sub-agents. It is the second US Iran designation round in three days, after 29 September, and a further US sanctions expansion while the freeze is supposed to hold."
+    },
+    {
+     "date": "29 Sep",
+     "tier": "press",
+     "src": "Iran International (29 Sep, citing a Rewards for Justice post on X; first logged 5 Oct)",
+     "url": "https://www.iranintl.com/en/202609297524",
+     "text": "UNVERIFIED - In a separate article, Iran International named the three IRGC Aerospace Force officials covered by the reported Rewards for Justice offer of up to $15 million as Ahmed Ja'farabadi, Abdollah Mehrabi and Ali Asghar Norouzi, citing the programme's post on X, which also sought information on the force's financial mechanisms; it noted the State Department graphic appeared to use a photo of Iran's top general Ali Abdollahi in place of Norouzi. No second outlet, State Department notice or readable programme page confirmed the offer.",
+     "thin": true
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -17416,7 +17986,7 @@ const DATA = {
      "tier": "analysis"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 10,
@@ -17426,10 +17996,81 @@ const DATA = {
     "Sanctions"
    ],
    "status": "breach",
-   "statusNote": "Still Breached, checked, no change. No oil-export waiver or licence exists: OFAC's Recent Actions, read directly on 1 October, shows no Iran general licence, waiver or shipping, insurance or banking authorisation, and its only 30 September entry is unrelated. The Federal Register of 30 September formally published General Licenses X and X1, recording that GL X, issued on 21 June, was revoked and superseded on 7 July by GL X1, a wind-down licence that expired on 17 July; the notice creates no new authorisation. Other US steps tightened rather than eased: Iran conventional-arms designations on 29 September and a rule codifying the 2020 sectoral sanctions order, effective 30 September. UNVERIFIED - UANI's 29 September shipping update counts at least 38 Iranian oil and petrochemical loadings since 14 July, about 55 laden tankers along Iran's coast and no crude tanker confirmed leaving the Gulf of Oman since 12 July. No month-end September estimate from Kpler, Vortexa, TankerTrackers, UANI or Bloomberg was found, so the latest remain 220,000-255,000 barrels a day loaded in August. Iran confirmed receipt of the US reply to its seven-day plan on 30 September, but whether it touches oil sanctions was not disclosed (Article 3). Article 10 stays Breached.",
+   "statusNote": "Still Breached, and Iran's crude loadings fell to zero. No oil-export waiver or licence exists: OFAC's Recent Actions and Iran page, read directly on 5 October, show no Iran oil general licence or shipping, insurance or banking authorisation; the newest Iran general licence is GL AA (24 August), a wind-down licence for a refining company that expires on 23 October, and the 1 October action added automotive, rail and metals designations instead (Article 7). Bloomberg reported on 1 October that Iran loaded no crude in September, the first such month since the war began, with Kpler and Vortexa both recording zero against about 250,000 barrels a day in August; TankerTrackers likewise saw the terminals idle, and Kpler's analyst put output near 1.8 million barrels a day with about 15 million barrels left afloat in Asia, a figure Bessent also gave on 27 September. CONTESTED (figures): Iran International says product and LPG exports have stopped, while UANI counts about eight LPG and naphtha tankers past the blockade; UANI's August export figure (49,677 barrels a day) measures exports rather than the 220,000-255,000 barrels a day of August loadings. UNVERIFIED: Bessent's reported 3 October remark that Iran had no oil cargoes on the water that week, and UANI's count of about 52 laden tankers off Iran's coast with ship-to-ship transfers off southern China. Oil Minister Mohsen Paknejad resigned on 4 October, citing personal issues, and NIOC chief Hamid Bovard became acting minister (AFP). No new Chinese teapot purchase data was found. Article 10 stays Breached.",
    "deadline": "Effective immediately from signing",
    "summary": "Immediately on signing, the US Treasury is to issue waivers permitting exports of Iranian crude, petroleum products and derivatives, together with the shipping, insurance and banking services they require. OFAC General License X, issued 22 Jun 2026 and authorized through 21 Aug 2026, is the instrument; the test is whether usable authorization is actually in force.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against OFAC Recent Actions, its 1 and 2 Oct detail pages and OFAC's Iran programme page (direct reads), Treasury sb0641-sb0649, the Federal Register, UANI's tanker tracker (no September figure) and its 30 Sep, 1 Oct and 2 Oct shipping updates (the 30 Sep update, 404 last run, now loads; 3 Oct returned 404), Iran International, Shafaq News and Briefs relays of Bloomberg, and searches for Kpler, Vortexa, TankerTrackers and Bloomberg September estimates, Chinese teapot buying and Bessent's oil remarks. New: Bloomberg, Kpler and Vortexa put Iran's September crude loadings at zero; TankerTrackers saw the terminals effectively idle; UANI counts about 52 laden tankers off Iran's coast and logs ship-to-ship transfers off southern China; Bessent's 27 Sep remarks and a reported 3 Oct remark on Iran's oil running out; GL AA (24 Aug), a refining wind-down licence, is the newest Iran general licence. No waiver, licence or shipping, insurance or banking authorisation for Iranian oil, and no fresh teapot purchase data. Article 10 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "OFAC Recent Actions (direct read)",
+     "url": "https://ofac.treasury.gov/recent-actions",
+     "text": "Read directly on 5 October: no Iran oil general licence, waiver or shipping, insurance or banking authorisation appears; the 1 October Iran entry is a designation action with an automotive and rail determination and an amended FAQ, and the 2 October entry is a Hamas-related counter-terrorism action, neither touching oil authorisations. Nothing is dated 3 or 4 October."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "OFAC Iran sanctions programme page (direct read); OFAC Iran General License AA",
+     "url": "https://ofac.treasury.gov/sanctions-programs-and-country-information/iran-sanctions",
+     "text": "Read directly on 5 October: the newest Iran general licence is GL AA of 24 August, a wind-down and maintenance licence for dealings with La Nivernaise de Raffinage SAS, a refining company covered by E.O. 13902 prohibitions, which runs to 23 October and authorises no Iranian oil exports. GLs F, G and J-1 are shown as suspended, and the page lists the 1 October automotive and rail determination; no oil-export authorisation has been added."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "UANI tanker tracker (direct read)",
+     "url": "https://www.unitedagainstnucleariran.com/tanker-tracker",
+     "text": "Read directly on 5 October: UANI's tanker tracker shows no September figure yet; its newest monthly figure puts Iran's August oil exports at 49,677 barrels a day (published 8 September), with only three LPG-laden tankers leaving the Gulf of Oman that month. The figure measures exports, against the 220,000-255,000 barrels a day of August loadings estimated by Kpler, Vortexa and TankerTrackers."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "press",
+     "src": "AFP (via Times of Israel live blog, citing state broadcaster IRIB and the presidential office)",
+     "url": "https://www.timesofisrael.com/liveblog_entry/iranian-oil-minister-quits-replaced-by-oil-executive/",
+     "text": "Iran's oil minister, Mohsen Paknejad, resigned on 4 October and the National Iranian Oil Company's chief executive, Hamid Bovard, was named acting minister. The presidential office said Paknejad cited personal issues and that Pezeshkian accepted the resignation after first rejecting it; AFP noted the change comes amid the US blockade of Iran's oil exports."
+    },
+    {
+     "date": "3 Oct",
+     "tier": "official",
+     "src": "Scott Bessent, US Treasury Secretary (via Iran International, 4 Oct)",
+     "url": "https://www.iranintl.com/en/202610044269",
+     "text": "UNVERIFIED - Iran International reported that Bessent said on 3 October that Iran would have no oil cargoes on the water that week and would earn no revenue from such shipments, describing this as a first. The venue was not given and no transcript or second outlet was found.",
+     "thin": true
+    },
+    {
+     "date": "30 Sep-2 Oct",
+     "tier": "analysis",
+     "src": "UANI, Iran Shipping Updates (30 Sep, 1 Oct and 2 Oct)",
+     "url": "https://www.unitedagainstnucleariran.com/analysis/iran-shipping-update-october-2-2026",
+     "text": "UNVERIFIED - UANI's 2 October update counts about 52 laden tankers in anchorages along Iran's coast, down from about 53 in its 30 September and 1 October updates and 55 on 29 September, with loadings since 14 July unchanged at 38 and no crude tanker confirmed leaving the Gulf of Oman since 12 July. It logs ship-to-ship transfers by the Iran-flagged HILDA I south of Zhuhai on 17 September and HAPPINESS I south of Hong Kong on 22 September, Iran-linked tankers gathered off Malaysia's Eastern Outer Port Limits, and 20 empty Iran-flagged tankers loitering off Sri Lanka.",
+     "thin": true
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Bloomberg (via Shafaq News and Briefs), citing its own tanker tracking and Kpler and Vortexa data",
+     "url": "https://shafaq.com/en/Middle-East/Iran-crude-loadings-fall-to-zero-in-September",
+     "text": "Bloomberg reported that Iran loaded no crude for export in September, the first month without shipments since the war began on 28 February, with Kpler and Vortexa both recording zero loadings, against about 250,000 barrels a day in August. Iran still supplied some Chinese refiners from floating storage east of Singapore during September, but without fresh cargoes those stocks are expected to run low. This is the first September month-end estimate found."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "analysis",
+     "src": "Iran International (1 Oct), citing TankerTrackers and Kpler analyst Homayoun Falakshahi; UANI shipping updates for the conflicting LPG count",
+     "url": "https://www.iranintl.com/en/202610016335",
+     "text": "CONTESTED (figures): Iran International reported that TankerTrackers found Iran's terminals effectively inactive for crude loadings throughout September and that Kpler's Homayoun Falakshahi said Iran had cut output to about 1.8 million barrels a day, roughly domestic demand, with about 15 million barrels left on tankers in Asian waters, mostly already sold. It said Iran's product and LPG exports, about 500,000 barrels a day last year, had also stopped since the blockade began, whereas UANI counts about eight handymax tankers of Iranian LPG and naphtha that have passed the blockade line."
+    },
+    {
+     "date": "27 Sep",
+     "tier": "official",
+     "src": "Scott Bessent, US Treasury Secretary, on Fox News' Sunday Morning Futures (27 Sep; first logged 5 Oct)",
+     "url": "https://www.foxnews.com/media/bessent-says-iran-nothing-left-trade-two-weeks-oil-lifeline-dries-up",
+     "text": "Bessent said about 15 million barrels of Iranian oil remained to be delivered and that Iran would have nothing left to trade, probably within the next two weeks. The figure matches the roughly 15 million barrels afloat cited by the Wall Street Journal and by Kpler, and Bessent described no easing of oil sanctions."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -18926,7 +19567,7 @@ const DATA = {
      "tier": "analysis"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 11,
@@ -18936,10 +19577,58 @@ const DATA = {
     "Sanctions"
    ],
    "status": "breach",
-   "statusNote": "Still Breached; the rial set another low while no release mechanism appeared. Alanchand, read directly on 1 October, quoted the dollar at 2,562,000 rials (sell; buy 2,536,500) at 20:55 on 30 September, up 0.61% on the day, with a 24-hour range of 2,533,000-2,572,000, the weakest rial level in this log (2,543,000 was logged for 20:30 on 29 September); Bon-bast again returned a 403 error. OFAC's Recent Actions, read the same day, shows no unblocking licence or release procedure; the 29 September action instead added conventional-arms designations for Saha Airlines, Yakovlev and MG-Flot to Treasury's 10 new blocked parties. UNVERIFIED - Iran International reported that the UK Treasury, answering a freedom-of-information request, said new licence applications from designated Iranian banks face a presumption of denial. Iran confirmed receipt of the US reply to its seven-day plan on 30 September, but whether it covers frozen funds was not disclosed (Article 3), and the reported offer of funds for nuclear steps remains CONTESTED by Trump's denial. No movement of balances in Qatar, South Korea, Iraq or Japan and no new Central Bank of Iran statement was found. Article 11 stays Breached.",
+   "statusNote": "Still Breached; the rial fell to new lows while US and UK measures narrowed Iran's financial channels further. Alanchand, read directly on 5 October, quoted the dollar at 2,699,000 rials (sell) at 05:55 that morning, with a 24-hour high of 2,731,000, 137,000 rials above the 2,562,000 logged for 30 September and the weakest level in this log; Iran International reported the euro above 3 million rials for the first time on 3 October and September inflation of 89.8%. The Central Bank announced a $2 billion banknote injection on 30 September and said on 2 October that the rate did not reflect fundamentals, without halting the slide. No unblocking licence or release procedure appears on OFAC's Recent Actions; instead Treasury designated the A7 shadow-banking network on 1 October, saying its sub-agents gave the Central Bank of Iran and the IRGC pathways to move funds, and FinCEN's proposed ban on transfers involving them was published on 5 October (Article 7). The UK item is no longer only a press claim: OFSI's own guidance of 23 September applies a presumption of denial to licence applications from five designated Iranian banks, though the FOI answer itself remains UNVERIFIED. Tehran's demand that frozen funds be released first still stands (Article 3), the reported offer of funds for nuclear steps stays CONTESTED by Trump's denial, and no movement of balances in Qatar, South Korea, Iraq, Japan or India and no agreed end-use was found. Article 11 stays Breached.",
    "deadline": "Lapsed — release procedures were to be set inside the 60-day window, which closed 16 Aug 2026",
    "summary": "The US is to make frozen Iranian funds — roughly $100B — fully usable, with the Central Bank of Iran directing the beneficiary, and procedures were to be set within the 60-day window. The test is whether a published release mechanism and any confirmed transfer exist, and whether end-use is agreed rather than contested.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Alanchand (direct read; 2,699,000 at 05:55 on 5 Oct), Bon-bast (403), the Central Bank of Iran's English site (rates only, no dated news), OFAC Recent Actions and its 1 and 2 Oct detail pages, Treasury sb0643-sb0645, the Federal Register (FinCEN A7 proposed rule, 5 Oct), OFSI's guidance on designated Iranian banks, Iran International's economy reporting and live blog, and searched for movements of funds held in Qatar, South Korea, Iraq, Japan and India, Central Bank of Iran statements and the UK FOI claim (only April-September items on the funds returned). New: the rial at new lows (euro above 3 million rials on 3 Oct); Central Bank statements of 30 Sep and 2 Oct; OFSI's 23 Sep presumption-of-denial guidance, which confirms the policy in the unverified FOI report; the A7 action against channels Treasury says the Central Bank used. No unblocking licence, release mechanism, transfer or agreed end-use. Article 11 stays Breached."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "press",
+     "src": "Alanchand (direct read)",
+     "url": "https://alanchand.com/en/currencies-price/usd",
+     "text": "Read directly on 5 October: the open-market dollar sold for 2,699,000 rials (buy 2,672,000) as of 05:55 on Monday 5 October, unchanged on the day, with a 24-hour range of 2,671,000-2,731,000; an earlier copy of the page showed 2,695,000 at 08:55 on 4 October after a 56,000-rial (2.12%) jump on 3 October. That is 137,000 rials (5.3%) above the 2,562,000 logged for 20:55 on 30 September and the weakest rial level in this log; the page puts the week's rise at 10.3%. Bon-bast again returned a 403 error."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "FinCEN proposed rule, Federal Register 2026-20371",
+     "url": "https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving",
+     "text": "FinCEN's proposed special measure, published on 5 October with comments due by 4 November, would bar covered US financial institutions from processing fund transfers involving sub-agents of the A7 Network, which it says Iranian actors including the Central Bank of Iran and the IRGC have used to move money. It cites nearly $140 million received by one sub-agent from Iranian shadow-fleet entities between July 2023 and October 2025. The measure narrows channels open to the Central Bank rather than releasing any frozen balance."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "OFAC Recent Actions (direct read)",
+     "url": "https://ofac.treasury.gov/recent-actions",
+     "text": "Read directly on 5 October: no unblocking licence or published release procedure for Iranian funds appears; the 1 October action instead blocked 30 more Iran-related parties and the A7 network, and the 2 October entry has no Iran element. Nothing is dated 3 or 4 October."
+    },
+    {
+     "date": "1-4 Oct",
+     "tier": "press",
+     "src": "Iran International (4 Oct), citing a government currency programme and the Statistical Centre of Iran",
+     "url": "https://www.iranintl.com/en/202610044269",
+     "text": "Iran International reported that five banks (Mellat, Tejarat, Melli, Saderat and Saman) were selling up to $10,000 per adult at 2.57 million rials per dollar under a government currency programme, below the open market, where the dollar had risen 1.49% to 2,593,000 rials on 1 October. It cited the Statistical Centre of Iran for September inflation of 89.8% year on year, a record."
+    },
+    {
+     "date": "30 Sep-3 Oct",
+     "tier": "press",
+     "src": "Iran International (3 Oct), relaying Central Bank of Iran statements",
+     "url": "https://www.iranintl.com/en/202610032594",
+     "text": "Iran International reported that the rial hit new record lows on Saturday 3 October, with the euro above 3 million rials for the first time and the dollar around 2.7 million on the open market. The Central Bank said on 2 October that the rate was not fully consistent with the economy's fundamentals, blaming uncertainty, psychological pressure and market expectations, after announcing on 30 September a plan to inject $2 billion in banknotes; Iran International said the interventions had not halted the slide. No release of frozen funds was mentioned."
+    },
+    {
+     "date": "23 Sep",
+     "tier": "official",
+     "src": "OFSI / HM Treasury licensing guidance (published 23 Sep; first logged 5 Oct)",
+     "url": "https://www.gov.uk/government/publications/hmt-licensing-guidance-presumption-of-denial-of-licence-applications-for-designated-iranian-banks/presumption-of-denial-of-licence-applications-for-designated-iranian-banks",
+     "text": "The UK's Office of Financial Sanctions Implementation published guidance on 23 September applying a presumption of denial to licence applications from five designated Iranian banks (Bank Sepah, Melli Bank plc, Bank Saderat, Persia International Bank and Bank Tejarat): licences will be granted only where required by law or in exceptional cases such as risk to life, limb or environmental safety, and then limited to basic needs, UK-only, auditable transactions, with no cash payments or transfers between designated banks. This confirms the policy described in the single-sourced 30 September FOI report; the guidance gives no frozen-asset amounts."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -20180,7 +20869,7 @@ const DATA = {
      "tier": "analysis"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 12,
@@ -20190,10 +20879,37 @@ const DATA = {
     "Negotiations"
    ],
    "status": "risk",
-   "statusNote": "Still At Risk / Contested - checked, no change. No implementation, monitoring or deconfliction body under the memorandum was proposed or created on 30 September-1 October. Reuters reported that Qatari mediators handed the US reply to Araghchi in Doha on 29 September, Iran's government spokeswoman confirmed receipt on 30 September, and Axios reported that Qatar is still discussing its compromise proposal with both sides after Secretary Rubio ordered the Iranian delegation out of the US; that is ad hoc shuttle mediation, now centred on Doha, rather than a standing joint body. Reuters' description of the plan as a return to an enhanced version of the June memorandum names no oversight or verification organ, and no new detail emerged on the Iran-Oman Hormuz arrangement AP described on 28 September, which remains a shipping regime rather than a joint mechanism. Qatar's foreign ministry news page, read directly on 1 October, has no Iran or mediation item for 29-30 September. Security Council Report's What's In Blue index, read directly on 1 October, adds only a 29 September post on the Secretary-General straw poll, with no Iran item after the 16 September Panel of Experts vote; the Panel lapsed on 27 September with no successor. Article 12 stays At Risk / Contested.",
+   "statusNote": "Still At Risk / Contested - checked, no change. No implementation, monitoring or deconfliction body under the memorandum was proposed or created on 1-5 October. The exchanges remain ad hoc shuttle mediation: Reuters reported on 1 October that the US reply was delivered through Qatar and is under review in Tehran, and Deputy Foreign Minister Gharibabadi said on 4 October that the US views conveyed by mediators were being examined through the relevant channel (Article 3). On the US side, Axios reported that Vice President Vance chaired an unannounced Camp David meeting on Iran and Yemen on 2 October, an internal deliberation rather than a joint body, and the Doha deconfliction cell described in June has still left no public trace. Qatar's foreign ministry news page, read directly on 5 October, carries no Iran or mediation item, its newest posts being 1 October items on Uruguay (including a letter of intent on international mediation) and Somalia. Security Council Report's What's In Blue index, read directly on 5 October, adds only two 1 October posts (October's programme of work and a sanctions focal-point dialogue), with no Iran item since the 16 September Panel of Experts vote; the Panel lapsed on 27 September with no successor. Article 12 stays At Risk / Contested.",
    "deadline": "No fixed deadline",
    "summary": "A joint mechanism is to be established to oversee implementation of the MOU and future compliance. The test is whether a standing body actually convenes — a high-level committee, monitoring or dispute-resolution group, coordination centre or deconfliction cell — as distinct from ad hoc mediation by third parties.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Qatar's MFA news page, Security Council Report's What's In Blue index, The Peninsula's Qatar section, Reuters (933thedrive), Press TV and Al Jazeera on Gharibabadi, and Axios on the Camp David meeting, and searched for Qatari, Pakistani and Omani mediation statements and envoy meetings (only June-August items surfaced); Pakistan's MFA homepage was undated. New: no Iran or mediation item from Qatar's MFA after 30 Sep, and two 1 Oct What's In Blue posts with no Iran content. None of the reporting describes a joint implementation, monitoring or deconfliction body; the channel remains mediators carrying messages. Article 12 stays At Risk / Contested."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "Qatar Ministry of Foreign Affairs, latest-news page (direct read)",
+     "url": "https://www.mofa.gov.qa/en/qatar/latest-articles/latest-news",
+     "text": "Read directly on 5 October: the newest items on Qatar's foreign ministry news page are dated 1 October and cover Uruguay's president and foreign minister (including a letter of intent on international mediation) and support for Somalia at the Human Rights Council, after three 30 September items on Panama and Finland. None concerns Iran, the United States, Hormuz or the US-Iran mediation, so Doha has still issued no statement of its own on the exchanges."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Security Council Report, What's In Blue index (direct read)",
+     "url": "https://www.securitycouncilreport.org/whatsinblue",
+     "text": "Read directly on 5 October: the newest posts are two dated 1 October, on the Council's October programme of work and on an informal interactive dialogue on the Focal Point for Delisting, after the 29 September straw-poll post. The latest Iran post is still the 16 September Panel of Experts vote, with nothing on any implementation, monitoring or deconfliction arrangement."
+    },
+    {
+     "date": "1-4 Oct",
+     "tier": "press",
+     "src": "Reuters (via 933thedrive); Kazem Gharibabadi (via Press TV); Axios, cross-read for Article 12",
+     "url": "https://www.presstv.co.uk/Detail/2026/10/04/777609/Iran-Gharibabadi-Iran-proposal-US-replies",
+     "text": "Reuters said on 1 October that the US reply reached Tehran through Qatar and is under review, and Gharibabadi said on 4 October that the US views conveyed by mediators were being examined through the relevant channel; Axios's account of the 2 October Camp David meeting describes an internal US deliberation. None of the reporting describes a joint implementation, monitoring or deconfliction body, so the channel remains ad hoc mediation."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -21531,7 +22247,7 @@ const DATA = {
      "url": "https://www.foxnews.com/live-news/us-iran-peace-deal-nuclear-talks-switzerland-06-21-26"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 13,
@@ -21541,10 +22257,37 @@ const DATA = {
     "Nuclear / IAEA"
    ],
    "status": "risk",
-   "statusNote": "Still At Risk / Contested - checked, no change; sequencing is now openly the core dispute. Reuters reported on 30 September that the seven-day plan exchanged via Qatar aims to restore an enhanced version of the June memorandum, including concrete steps on Iran's nuclear programme, and that the sides differ mainly on the order of steps rather than their components; an official briefed on the talks called sequencing the main disagreement. CONTESTED: that places nuclear steps inside the package, whereas Araghchi said on 29 September that the current focus is solely Hormuz, an Iranian official denied any nuclear discussion, and Axios reported Iran will weigh nuclear concessions only after the US returns to the memorandum, a stance that tracks Article 13's gate. The US position that relief follows concrete nuclear progress inverts the gate. No Stage-2 track exists, and none of the five gating articles moved: the ceasefire gate failed again with three tankers reported struck on 29 September and Trump saying on 30 September the US would either strike Iran or make a deal, the blockade continues (CENTCOM count 122), Hormuz remains restricted, OFAC posted no Iran licence or waiver, and no frozen assets were released. Article 13 stays At Risk / Contested.",
+   "statusNote": "Still At Risk / Contested - checked, no change; sequencing remains the core dispute and no nuclear-track talks have begun. Reuters, citing three senior Iranian officials, reported on 1 October that Washington wants Iran's nuclear programme included in the negotiations while Tehran insists nuclear talks can begin only after its seven conditions are met, a stance that tracks Article 13's gate. Al Jazeera reported on 4 October that the US has continued to focus on nuclear talks while reopening Hormuz is Iran's main goal, and Axios wrote on 2 October that Trump wants a comprehensive, legacy-making accord whereas Iran seeks a narrow, low-profile deal. The US nuclear-first position, restated in Waltz's charge that Iran's 60% enrichment has no civilian purpose (Article 8), still inverts the gate. CONTESTED, carried forward: Reuters' 30 September report that the seven-day plan includes concrete nuclear steps, against Iran's Hormuz-only framing. None of the five gates moved: the ceasefire gate failed again, with tankers reported hit near Hormuz on 2 and 4 October and Trump warning of renewed strikes (Articles 1 and 3); the blockade continues (Article 4); Ghalibaf is reported as saying Hormuz stays closed until Iran's conditions are met (Article 5; UNVERIFIED relay, Article 3); OFAC's Recent Actions, read on 5 October, show new Iran sanctions on 1 October (automotive, rail and industrial targets) and no licence or waiver (Article 10); and Iran is still demanding the release of at least $12 billion in frozen funds (Article 11). Article 13 stays At Risk / Contested.",
    "deadline": "Triggers when Arts. 1/4/5/10/11 are underway",
    "summary": "Stage-2 nuclear talks are to begin only once five gating articles are underway: the ceasefire (Art 1), blockade lift (Art 4), Hormuz measures (Art 5), oil waivers (Art 10) and asset release (Art 11). The test is the state of each gate — any one of them in breach keeps the gateway shut.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against Reuters (933thedrive), Axios (2-3 Oct), Al Jazeera (4 Oct), Press TV, CTP-ISW's 1-3 Oct Iran Updates and OFAC Recent Actions (read 5 Oct: 1 Oct Iran-related designations and an E.O. 13902 automotive and rail determination, 2 Oct Hamas designations only, and no Iran licence or waiver), and cross-checked Articles 1, 4, 5, 10 and 11: tankers reported hit near Hormuz on 2 and 4 Oct, no blockade lift, Hormuz still closed by Iran's account, no oil waiver and no frozen-fund release. New: Reuters' 1 Oct account of the sequencing split (nuclear talks only after Iran's seven conditions), Axios on comprehensive versus narrow deal aims, and Al Jazeera's 4 Oct framing. No nuclear-track talks have begun and none of the five gates moved. Article 13 stays At Risk / Contested."
+    },
+    {
+     "date": "4 Oct",
+     "tier": "press",
+     "src": "Al Jazeera",
+     "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
+     "text": "Al Jazeera reported on 4 October that the US has continued to focus on nuclear talks while reopening the Strait of Hormuz has been Iran's main goal, in a report on Iranian statements that the strait stays closed until Washington meets Tehran's conditions (Article 3). No nuclear-track session was reported."
+    },
+    {
+     "date": "2 Oct",
+     "tier": "press",
+     "src": "Axios (Barak Ravid, analysis drawing on US and Iranian officials and analysts)",
+     "url": "https://www.axios.com/2026/10/02/iran-trump-negotiations-war-reasons-fail",
+     "text": "Axios wrote on 2 October that Trump wants a legacy-making accord that redefines US-Iran relations, whereas Iran prefers a narrow, transactional deal negotiated indirectly and with the lowest possible profile, with each side accusing the other of bad faith since the June memorandum. The comprehensive-versus-narrow split mirrors the dispute over whether nuclear issues come first or only after the gating articles."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "press",
+     "src": "Reuters (Parisa Hafezi; via 933thedrive), citing three senior Iranian officials and an insider",
+     "url": "https://www.933thedrive.com/2026/10/01/iran-readies-harder-retaliation-if-attacked-as-diplomacy-faces-long-odds/",
+     "text": "Reuters reported on 1 October that Washington wants Iran's nuclear programme included in the negotiations, while Tehran insists nuclear talks can begin only after its seven conditions, including an end to fighting, the lifting of the blockade, the release of frozen funds and an oil-sanctions waiver, are met. Iran's position tracks Article 13's gate; the US position would bring the nuclear file forward before the gating articles are implemented."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -22662,7 +23405,7 @@ const DATA = {
      "tier": "analysis"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   },
   {
    "n": 14,
@@ -22671,10 +23414,51 @@ const DATA = {
     "Governance"
    ],
    "status": "risk",
-   "statusNote": "Still At Risk / Contested - checked, no change. No Council draft, session or statement on Iran occurred on 30 September: UN press releases, read directly on 1 October, show no Council meeting coverage dated 30 September, the latest products being the 29 September Haiti resolution 2829 (2026) and a DRC briefing. Greece takes the presidency on 1 October, but its programme of work was not yet posted (the UN page still links September's), SCR's October programme-of-work path returns 404, and SCR's October forecast remains a placeholder whose PDF returns 404 while the forecast index still lists September, so whether October carries an Iran, 1737 or 2231 item is still unknown; the programme may only be adopted on 1 October, New York time. What's In Blue's only new post is the 29 September Secretary-General straw poll. The 1737 Committee page, re-read on 1 October, still shows no chair, and the Panel of Experts lapsed on 27 September after China and Russia vetoed its renewal. No new China or Russia Council posture on Iran was found. With talks confined to Qatari shuttle exchanges over sequencing and Trump threatening renewed strikes, no binding-endorsement track exists. Article 14 stays At Risk / Contested.",
+   "statusNote": "Still At Risk / Contested - checked, no change. Greece's October programme of work is now out: the UN's provisional programme, dated as of 1 October and read directly, lists no Iran, non-proliferation, 1737, 2231 or Hormuz item, and Security Council Report's 1 October summary adds only a line that members will keep following the Middle East crisis and spillover effects such as disruption to navigation in the Strait of Hormuz and Bab al-Mandab, so the IAEA Board's 9 September referral is not on the programme. SCR's October forecast, now published, has no Iran chapter. Greece's foreign ministry said on 1 October that its presidency will address the Middle East and Ukraine among other crises and hold a high-level event on freedom of navigation and maritime security under UNCLOS on 29 October, without naming Iran or Hormuz. The 1737 Committee page, read on 5 October, still says no chair has been elected, and the Panel of Experts lapsed on 27 September after Russian and Chinese vetoes. On permanent-member posture, Russia's Ulyanov on 2 October rejected the US demand that Iran abandon its nuclear programme (Article 8), the State Department framed its 29 September Iran designations as support for the reimposed UN measures, and no new Chinese statement was found (China's MFA briefing page served a stale cache). UN press releases and meetings coverage served stale listings, but no Council product on Iran was found. With no final deal and talks confined to Qatari shuttle exchanges, no binding-endorsement track exists. Article 14 stays At Risk / Contested.",
    "deadline": "Required for final deal (~16 Aug 2026)",
    "summary": "The final deal is to be endorsed by a binding UN Security Council resolution, making China and Russia structural guarantors of the outcome. Nothing can be endorsed until a final deal exists, so the test is Council drafts, sessions and products on the MOU and the posture of the permanent members.",
    "evidence": [
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Tracker check, 5 Oct",
+     "text": "Checked 1-5 Oct against the UN programme-of-work page and October's provisional programme PDF (read at its linked /2026/ path after a guessed path returned 404), Security Council Report (What's In Blue index and its 1 Oct programme-of-work post, the now-published October forecast with its status update and maritime-security chapter), the 1737 Committee page, Greece's foreign ministry, Iran Watch's library, and UN press releases and meetings coverage (both served undated or stale listings, the latter showing items from December 2025), plus searches for the Greek presidency, the 1737 chair and China and Russia Council posture (only earlier items surfaced); China's MFA briefing page served a May 2026 cache. New: October's programme carries no Iran, 1737 or 2231 item; SCR's forecast has no Iran chapter; Greece's 29 Oct maritime-security event; the State Department's 29 Sep framing of its Iran designations as supporting reimposed UN measures. No Council draft, session or statement on Iran, no 1737 chair and no endorsement track. Article 14 stays At Risk / Contested."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "official",
+     "src": "UN Security Council provisional programme of work for October 2026 and 1737 Committee page (direct reads)",
+     "url": "https://main.un.org/securitycouncil/sites/default/files/2026/monthly_pow2026-10.pdf",
+     "text": "Read directly on 5 October: the UN's provisional programme of work for October, dated as of 1 October and linked from the programme-of-work page, lists meetings on the Middle East, Yemen, UNDOF, Sudan, Libya, Haiti and other files and a 29 October briefing on emerging technologies and maritime security, but no Iran, non-proliferation, 1737, 2231 or Hormuz item. The 1737 Committee page still says the Chair has not yet been elected and still describes the Panel of Experts as supporting the Committee, with no notice of its 27 September lapse."
+    },
+    {
+     "date": "5 Oct",
+     "tier": "analysis",
+     "src": "Security Council Report, October 2026 Monthly Forecast (direct read)",
+     "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-10/",
+     "text": "Read directly on 5 October: SCR's October forecast is now published, with chapters on Lebanon, Yemen, Syria, the Middle East, UNDOF, Iraq-Kuwait, emerging technologies and maritime security and other country and thematic items, but no Iran, 1737 or 2231 chapter, and its status update since September has no Iran entry. The maritime-security chapter does not mention Hormuz or Iran, cites Houthi Red Sea attacks only as past examples and names no planned Council product."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "analysis",
+     "src": "Security Council Report, What's In Blue, 'Security Council Programme of Work for October 2026'",
+     "url": "https://www.securitycouncilreport.org/whatsinblue/2026/10/security-council-programme-of-work-for-october-2026.php",
+     "text": "SCR's 1 October summary of Greece's programme of work lists signature events on emerging technologies and maritime security (chaired by Prime Minister Mitsotakis) and on children and armed conflict, plus meetings on Yemen, Syria, Lebanon, the Golan, the quarterly Middle East debate and Iraq-Kuwait, but no Iran, 1737 or 2231 item. It says members will keep following the Middle East crisis and its spillover effects, such as disruption to navigation in the Strait of Hormuz and Bab al-Mandab, so the IAEA Board's 9 September referral is not on the programme."
+    },
+    {
+     "date": "1 Oct",
+     "tier": "official",
+     "src": "Hellenic Ministry of Foreign Affairs, announcement on assuming the Security Council presidency",
+     "url": "https://www.mfa.gr/en/announcement-by-the-ministry-of-foreign-affairs-on-the-assumption-of-greeces-presidency-of-the-united-nations-security-council-by-greece-as-of-october-1-2026/",
+     "text": "Greece's foreign ministry said on 1 October that its presidency would address the crises in Ukraine and the Middle East and steer the Secretary-General selection, and would hold a high-level event on 29 October on freedom of navigation and maritime security under UNCLOS. The announcement does not mention Iran, Hormuz or the memorandum."
+    },
+    {
+     "date": "29 Sep",
+     "tier": "official",
+     "src": "US Department of State fact sheet (via Iran Watch; state.gov is not readable)",
+     "url": "https://www.iranwatch.org/library/governments/united-states/executive-branch/department-state/fact-sheet-united-states-disrupts-irans-proliferation-sensitive-efforts-support-un",
+     "text": "A State Department fact sheet dated 29 September presented its conventional-arms designations of Yakovlev, MG-Flot and Saha Airlines under E.O. 13949 as action in support of the reimposition of UN sanctions and restrictive measures on Iran. It shows Washington treating the reimposed UN measures as in force and enforcing them nationally while the Council's 1737 Panel has lapsed; it does not mention the Council, the 1737 Committee or the memorandum."
+    },
     {
      "date": "1 Oct",
      "tier": "analysis",
@@ -23786,7 +24570,7 @@ const DATA = {
      "url": "https://press.un.org/en/2026/sc16315.doc.htm"
     }
    ],
-   "lastChecked": "1 Oct 2026 (10:15 SGT)"
+   "lastChecked": "5 Oct 2026 (10:32 SGT)"
   }
  ],
  "PREV_COUNTS": {
@@ -23797,13 +24581,13 @@ const DATA = {
   "risk": 3,
   "breach": 11
  },
- "PREV_LABEL": "30 Sep 2026 (10:38 SGT)",
+ "PREV_LABEL": "1 Oct 2026 (10:15 SGT)",
  "SUBCLOCKS": [
-  "60-day final-deal window: expired 16 Aug. Day 106, forty-six days past, and the obligation cannot be met. The US reply Tehran had awaited was delivered: Qatari mediators handed it to Araghchi in Doha on the evening of 29 September, and Iran's government confirmed receipt on 30 September without disclosing its contents; an official briefed on the talks said the main disagreement is over sequencing. Axios reported that Rubio had ordered Iran's UN delegation out of the US on 28 September, and Trump said on 30 September the US would either strike Iran or make a deal, very soon. There is still no round, deal text, extension or Oman follow-on date.",
-  "Blockade full lift + Hormuz pre-war volume: due ~17 Jul, lapsed 76 days ago. CENTCOM's count stays at 122 commercial vessels redirected (as of 25 September), with no newer figure, no lift and no drawdown; USNI's 28 September tracker shows two carrier strike groups in the Arabian Sea, and USS Theodore Roosevelt's deployment to relieve George Washington is a rotation (USNI only). The US-led coalition's separate anti-ISIS mission in Iraq ended on 30 September, with the Pentagon citing a shift to bilateral cooperation; whether a residual force stays is contested.",
-  "Toll-free Hormuz passage: window ended ~16 Aug and expired entirely unused. Windward counted 17 transits on 29 September (7 dark), with 28 September revised to 16, and logged three tankers struck by unknown projectiles on 29 September; it also named the Kuwaiti VLCC Al Funtas as the ship hit on 28 September, corroborating Maritime Executive. Brent's December contract, now the front month, settled at $98.03 (+1.9%) on 30 September.",
-  "OFAC General License X (oil waiver): issued 21 Jun to run to 21 Aug, but revoked 7 Jul; the wind-down GL X1 expired 17 Jul and nothing has replaced it. The Federal Register published both licences on 30 September as a retrospective record, with no new authorization. OFAC's Recent Actions, read directly on 1 October, shows no Iran licence or waiver; instead the 29 September action added Iran conventional-arms designations to three existing listings alongside Treasury's 10 procurement targets.",
-  "Licensing route and sanctions trajectory: the rial weakened to 2,562,000 per dollar (Alanchand, 20:55 on 30 September), the weakest level in this log. A rule effective 30 September wrote the 2020 sectoral sanctions order (E.O. 13902) into the Iran regulations. Iraq has asked Washington for a humanitarian exemption from the Iranian-airline measures (The National, 26 September), but no US waiver has been published, and the Najaf-flights resumption remains contested."
+  "60-day final-deal window: expired 16 Aug. Day 110, fifty days past, and the obligation cannot be met. Iran has still not answered the US reply that Qatari mediators delivered in Doha on 29 September: Deputy Foreign Minister Gharibabadi said on 4 October that it was still being examined, and three senior Iranian officials told Reuters on 1 October that an agreement is very unlikely, listing conditions that include the release of at least $12 billion in frozen funds. Trump told TIME that renewed bombing after the 3 November midterms is possible and said on 3 October that it would end the easy way or the hard way; Axios reported that Vance chaired a Camp David meeting on Iran and Yemen on 2 October. There is still no round, deal text, extension or Oman follow-on date.",
+  "Blockade full lift + Hormuz pre-war volume: due ~17 Jul, lapsed 80 days ago. CENTCOM's count rose to 125 commercial vessels redirected as of 30 September (122 on 25 September), with no lift, easing or drawdown, and Treasury said on 1 October that Iran's oil revenues are falling to zero as the blockade takes hold; Bloomberg, Kpler and Vortexa found no Iranian crude loadings in September. Whether USS Theodore Roosevelt (sailed 27 September) and the Makin Island amphibious group (28 September) add to US forces around Iran or relieve units already there is now contested. The separate anti-ISIS coalition left Iraq on 30 September; whether a residual US force stays is contested.",
+  "Toll-free Hormuz passage: window ended ~16 Aug and expired entirely unused. Windward counted 10 transits on 3 October (1 dark) and named Al Ruwais as the third tanker struck on 29 September; the Kuwaiti VLCC Kazimah III was hit and set on fire on 1 October and a Panama-flagged tanker on 2 October, six ships in a week by UKMTO's count. G7 leaders called on 2 October for navigation rights in the strait to be restored in full and agreed a 100 million-barrel stock release. Brent's December contract settled at $102.31 on 1 October and $102.25 on 2 October.",
+  "OFAC General License X (oil waiver): issued 21 Jun to run to 21 Aug, but revoked 7 Jul; the wind-down GL X1 expired 17 Jul and nothing has replaced it. OFAC's Recent Actions, read directly on 5 October, shows no Iran oil licence or waiver, and the newest Iran general licence is a refining wind-down (GL AA, to 23 October). Instead OFAC added 30 Iran-related designations on 1 October, opened Iran's automotive and rail sectors to sanctions under E.O. 13902 and designated the A7 shadow-banking network.",
+  "Licensing route and sanctions trajectory: the rial weakened to 2,699,000 per dollar (Alanchand, 05:55 on 5 October), the weakest level in this log, and the euro passed 3 million rials on 3 October. FinCEN's proposed rule against the A7 network's sub-agents, which Treasury says the Central Bank of Iran used, was published on 5 October, and the UK's 23 September guidance presumes denial of licences for five designated Iranian banks. Iraq says Washington granted an exemption for Iranian airlines' Najaf flights (up to 40 a day), but OFAC has published no licence and the reported scope is contested."
  ]
 };
 const { SIGN_LABEL, REFRESHED, DAY_OF_60, FINAL_DUE, STATUS, TAG, TIER, ARTICLES, PREV_COUNTS, PREV_LABEL, SUBCLOCKS } = DATA;
